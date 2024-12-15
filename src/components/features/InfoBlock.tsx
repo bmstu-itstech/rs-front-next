@@ -24,6 +24,6 @@ function InfoBlock({
     </div>
   );
 
-};
+}
 
 export default memo(InfoBlock);
