@@ -13,7 +13,13 @@ export default function Home() {
         title="НОВОСТИ"
       />
     </Fullscreen>
-    <Fullscreen background="/backgrounds/3rd.png" />
+      <Fullscreen background="/backgrounds/3rd.png" >
+        <InfoBlock
+        title="ДОСТИЖЕНИЯ"
+        >
+          <AchievementsBlock/>
+        </InfoBlock>
+      </Fullscreen>
     <Fullscreen background="/backgrounds/4th.png" />
     </>
   );
