@@ -1,6 +1,6 @@
 "use client";
 
-import { memo } from "react";
+import React, { memo } from "react";
 import { Bold, Text } from "../shared";
 import { isMobile } from "../hooks";
 
@@ -9,7 +9,7 @@ function InfoBlock({
   children = null
 }: {
   title?: string;
-  children?: any;
+  children?: React.ReactNode;
 }) {
 
   const mobile = isMobile();
