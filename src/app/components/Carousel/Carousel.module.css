@@ -1,7 +1,7 @@
 .embla {
   margin: auto;
   --slide-size: 33%;
-  --slide-spacing: 4rem;
+  --slide-spacing: 6%;
 }
 .embla__container {
   display: flex;

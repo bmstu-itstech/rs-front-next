@@ -1,13 +1,22 @@
 import Image from 'next/image';
 import type {FC} from 'react';
 import type Props from './Images.props';
+import ArrowRight from '@/app/components/icons/ArrowRight';
 
-const CarouselItem: FC<Props> = ({src, index, className, ...props}) => {
+const CarouselItem: FC<Props> = ({
+  src,
+  title,
+  description,
+  moreInfoText,
+  index,
+  className,
+  ...props
+}) => {
   return (
     <div
-      className={`aspect-[10/11] rounded-xl_6 overflow-hidden border-5 border-orange_main flex flex-col ${className}`}
+      className={`aspect-[10/11] w-full max-w-picture flex-grow-0 rounded-xl_6 overflow-hidden border-5 border-orange_main flex flex-col ${className}`}
       {...props}>
-      <div className='flex-initial h-[42%]'>
+      <div className=' h-[42%] w-full'>
         <Image
           src={src}
           width={300}
@@ -22,20 +31,19 @@ const CarouselItem: FC<Props> = ({src, index, className, ...props}) => {
           }}
         />
       </div>
-      <div className='bg-orange_main flex justify-center py-1 text-white_abs w-full'>
-        <p className='flex w-2/3 items-center justify-center line-clamp-2 text-center'>
-          Его величество великий Тимоша, он же Т-Тимоша
+      <div className='bg-orange_main flex justify-center py-1 text-white_abs w-full select-none'>
+        <p className='w-2/3 items-center text-2xl mx-auto justify-center line-clamp-2 text-center max-w-96'>
+          {title}
         </p>
       </div>
-      <div className='w-full px-10 py-6 bg-white h-full'>
-        <p className='w-full text-black line-clamp-4 text-lg font-normal'>
-          Дорогой дневник, не знаю как описать тимошу в еще более приятном
-          свете, чтобы его величество котяра был настолько доволен своими
-          рабами, что снизайдет до нас и помурлычит мне на курсовой... Дорогой
-          дневник, не знаю как описать тимошу в еще более приятном свете, чтобы
-          его величество котяра был настолько доволен своими рабами, что
-          снизайдет до нас и помурлычит мне на курсовой...
+      <div className='w-full flex flex-col justify-between items-center px-6 py-3 bg-white h-full'>
+        <p className='w-full flex-1 text-black text-lg line-clamp-3 max-h-full  font-normal select-none'>
+          {description}
         </p>
+        <div className='flex items-center justify-between h-fit w-full text-black text-base'>
+          <p className='line-clamp-1'>{moreInfoText}</p>
+          <ArrowRight className='w-10 cursor-pointer' />
+        </div>
       </div>
     </div>
   );

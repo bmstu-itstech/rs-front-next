@@ -6,4 +6,7 @@ export const usecase_default = {
     require('@/assets/test4.jpg').default,
     require('@/assets/test5.jpg').default,
   ],
+  description: [
+    
+  ]
 };
