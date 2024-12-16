@@ -1,11 +1,11 @@
 import {fn} from '@storybook/test';
 import {Meta, StoryObj} from '@storybook/react';
-import Props from './Carousel.props';
-import Carousel from '.';
-import {usecase_default} from './Carousel.usecase';
+import Props from './News.props';
+import News from '.';
+import { usecase_default } from '@/app/components/Carousel/Carousel.usecase';
 
 const meta: Meta<Props> = {
-  component: Carousel,
+  component: News,
 };
 
 export default meta;

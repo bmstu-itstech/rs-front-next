@@ -1,44 +1,29 @@
+'use client';
 import type {FC} from 'react';
-import Image from 'next/image';
 import Props from './Carousel.props';
-import CarouselImport from 'react-gallery-carousel';
+import React from 'react';
+import useEmblaCarousel from 'embla-carousel-react';
+import styles from './Carousel.module.css';
+import {CarouselItem} from './components/Images';
 
-const Carousel: FC<Props> = ({src, className, ...props}) => {
+const MyCarousel: FC<Props> = ({src, className, ...props}) => {
+  const [emblaRef] = useEmblaCarousel();
+
   return (
-    <div
-      className={`w-full min-w-full max-w-full h-full min-h-[180px] inline-block md:hidden relative md:static ${className}`}>
-      <CarouselImport
-        className={`px-7 py-6 rounded-2xl cursor-pointer`}
-        hasMediaButton={false}
-        hasDotButtons={false}
-        hasSizeButtonAtMax='topRight'
-        hasSizeButton={false}
-        shouldLazyLoad
-        shouldSwipeOnMouse
-        hasIndexBoard='bottomRight'
-        transitionDurationMin={75}
-        transitionDurationMax={100}
-        hasCaptions={false}
-        shouldMinimizeOnClick
-        objectFitAtMax='contain'
-        objectFit='cover'
-        shouldMinimizeOnSwipeDown
-        hasThumbnails={false}
-        hasRightButton={false}
-        hasLeftButton={false}
-        hasThumbnailsAtMax={false}
-        style={{backgroundColor: 'rgba(0,0,0,0)'}}
-        {...props}>
-        {src.map((src, index) => {
-          return (
-            <div key={index}>
-              <Image src={src} alt={`${index}`} />
+    <section className={`${styles.embla}`} {...props}>
+      <div className={'overflow-hidden'} ref={emblaRef}>
+        <div className={`${styles.embla__container} flex px-8`}>
+          {src.map((slide, index) => (
+            <div
+              className={`${styles.embla__slide} flex justify-center`}
+              key={index}>
+              <CarouselItem src={slide} index={index} />
             </div>
-          );
-        })}
-      </CarouselImport>
-    </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 
-export default Carousel;
+export default MyCarousel;
