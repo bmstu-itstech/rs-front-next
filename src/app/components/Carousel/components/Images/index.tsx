@@ -14,7 +14,7 @@ const CarouselItem: FC<Props> = ({
 }) => {
   return (
     <div
-      className={`aspect-[10/11] w-full max-w-picture flex-grow-0 rounded-xl_6 overflow-hidden border-5 border-orange_main flex flex-col ${className}`}
+      className={`aspect-[10/11] w-full max-w-picture flex-grow-0 rounded-6xl overflow-hidden border-5 border-orange_main flex flex-col ${className}`}
       {...props}>
       <div className=' h-[42%] w-full'>
         <Image

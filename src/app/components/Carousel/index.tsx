@@ -29,7 +29,11 @@ const MyCarousel: FC<Props> = ({src, className, ...props}) => {
           </div>
         </div>
       </section>
-      <ProgressBar selectedSnap={selectedSnap} snapCount={snapCount} />
+      <ProgressBar
+        className='z-10'
+        selectedSnap={selectedSnap}
+        snapCount={snapCount}
+      />
     </>
   );
 };

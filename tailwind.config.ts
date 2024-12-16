@@ -24,16 +24,16 @@ export default {
         picture: '31.25rem',
       },
       borderRadius: {
-        xl_6: '3.75rem',
+        '6xl': '3.75rem',
       },
       borderWidth: {
         5: '5px',
       },
       fontSize: {
-        xl_6: '5.125rem',
+        '6xl': '5.125rem',
       },
       lineHeight: {
-        xl_6: '6.125rem',
+        '6xl': '6.125rem',
       },
     },
   },
