@@ -16,7 +16,7 @@ const CarouselItem: FC<Props> = ({
     <div
       className={`aspect-[10/11] w-full max-w-picture flex-grow-0 rounded-6xl overflow-hidden border-5 border-orange_main flex flex-col ${className}`}
       {...props}>
-      <div className=' h-[42%] w-full'>
+      <div className=' h-[42%] w-full select-none'>
         <Image
           src={src}
           width={300}
@@ -32,7 +32,7 @@ const CarouselItem: FC<Props> = ({
         />
       </div>
       <div className='bg-orange_main flex justify-center py-1 text-white_abs w-full select-none'>
-        <p className='w-2/3 items-center text-2xl mx-auto justify-center line-clamp-2 text-center max-w-96'>
+        <p className='w-2/3 items-center text-2xl mx-auto justify-center line-clamp-2 text-center max-w-96 select-none'>
           {title}
         </p>
       </div>
@@ -40,7 +40,7 @@ const CarouselItem: FC<Props> = ({
         <p className='w-full flex-1 text-black text-lg line-clamp-3 max-h-full  font-normal select-none'>
           {description}
         </p>
-        <div className='flex items-center justify-between h-fit w-full text-black text-base'>
+        <div className='flex items-center justify-between h-fit w-full text-black text-base select-none'>
           <p className='line-clamp-1'>{moreInfoText}</p>
           <ArrowRight className='w-10 cursor-pointer' />
         </div>
