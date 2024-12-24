@@ -127,9 +127,10 @@
     user-select: none;
 }
 
+
+
 .card1:hover {
     border: white 5px solid;
-
 }
 
 .tt3 {
@@ -175,9 +176,8 @@
 
 }
 
+
 .rHover:hover {
     background-color: #c1310052;
     cursor: pointer;
-
-
 }

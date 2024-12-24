@@ -1,6 +1,6 @@
-import { TitleBlock, AchievementsBlock } from "../components/widgets";
-import Fullscreen from "../components/shared/Fullscreen";
-import { InfoBlock } from "../components/features";
+import { TitleBlock, AchievementsBlock } from "./components/widgets";
+import Fullscreen from "./components/shared/Fullscreen";
+import { InfoBlock } from "./components/features";
 
 export default function Home() {
   return (
@@ -17,7 +17,7 @@ export default function Home() {
         <InfoBlock
         title="ДОСТИЖЕНИЯ"
         >
-          <AchievementsBlock/>
+          <AchievementsBlock list={undefined}/>
         </InfoBlock>
       </Fullscreen>
     <Fullscreen background="/backgrounds/4th.png" />

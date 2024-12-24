@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { Navbar } from "../components/widgets";
+import { Navbar } from "./components/widgets";
 
 const alsRegular = localFont({
   src: "./fonts/ALS_Sector-Regular.otf",
