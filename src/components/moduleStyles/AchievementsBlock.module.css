@@ -111,6 +111,8 @@
     height: 280px;
     display: flex;
     justify-content: space-between;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 .card1 {

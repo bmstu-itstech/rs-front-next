@@ -1,9 +1,17 @@
-import React from 'react';
+import React, {FC} from 'react';
 import cl from "../moduleStyles/AchievementsBlock.module.css"
 import Image from "next/image";
 import ExampleImage from "@/app/assets/b62bf66caf09a0a9bd701c50794bd2e2.jpeg"
+import {AchievementItem} from "@/app/models/achievementItem";
 
-const AchievementsBlock = () => {
+
+interface IProps {
+    list: AchievementItem[];
+}
+const AchievementsBlock: FC<IProps> = ({}) => {
+
+
+
     return (
         <div className={cl.cont}>
             <div className={cl.bl1}>
