@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 
-export default function isMobile() {
+export default function IsMobile() {
 
   const [state, setState] = useState<boolean>(() => document.body.clientWidth <= 700);
 

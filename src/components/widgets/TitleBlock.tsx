@@ -38,7 +38,7 @@ function TitleBlock() {
           aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         </Text>
       </motion.div>
-      <motion.div className="py-[10px]" variants={buttonVariants}>
+      <motion.div className="py-[10px] mt-[12px]" variants={buttonVariants}>
         <Button>ПОДРОБНЕЕ</Button>
       </motion.div>
     </motion.div>
