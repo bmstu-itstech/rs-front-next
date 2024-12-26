@@ -17,7 +17,7 @@ const Fullscreen = ({
 }: FullscreenProps) => {
   return (
     <div
-      className="fullscreen w-screen h-screen relative overflow-auto bg-cover bg-center bg-no-repeat flex justify-center"
+      className="w-screen h-screen relative overflow-hidden bg-cover bg-center bg-no-repeat flex justify-center"
       style={{ backgroundImage: `url(${background})` }}
     >
       {needsTopShadow && (

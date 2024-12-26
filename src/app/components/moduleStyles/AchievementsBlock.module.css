@@ -1,6 +1,6 @@
 .bl1 {
     width: 100%;
-    max-width: 1623px;
+    max-width: 1400px;
     height: 560px;
     background-color: black;
     border: #C13100 5px solid;
@@ -20,6 +20,7 @@
     justify-content: center;
     min-width: 90vw;
     padding: 20px;
+    z-index: 100;
 }
 
 .img {
@@ -31,20 +32,60 @@
     border-bottom-right-radius: 54px;
 }
 
+.br {
+    border-top-right-radius: 19px;
+    border-bottom-right-radius: 19px;
+}
+
+.bl {
+    border-top-left-radius: 19px;
+    border-bottom-left-radius: 19px;
+}
+
+.btt {
+    background-color: black;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+}
+.imgGr {
+    width: 100%;
+    height: auto;
+}
+
+.borderRight {
+    border-right: #C13100 5px solid;
+}
+.borderLeft {
+    border-left: #C13100 5px solid;
+}
+
 .img2 {
     height: 100%;
-    width: auto;
+    /*width: 390px;*/
+
     border-radius: 54px;
+}
+
+.img3 {
+    object-fit: cover;
+    width: 30%;
+    height: 100%;
 }
 
 .black {
     background: rgb(0, 0, 0);
-    background: -moz-linear-gradient(90deg, rgba(0, 0, 0, 1) 70%, rgba(255, 255, 255, 0) 100%);
-    background: -webkit-linear-gradient(90deg, rgba(0, 0, 0, 1) 70%, rgba(255, 255, 255, 0) 100%);
-    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 70%, rgba(255, 255, 255, 0) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#ffffff", GradientType=1);
+    background: -moz-linear-gradient(90deg, rgba(0, 0, 0, 1) 68%, rgba(0, 0, 0, 1) 78%, rgba(0, 0, 0, 0.4) 85%, rgba(0, 0, 0, 0.3) 93%, rgba(0, 0, 0, 0) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(0, 0, 0, 1) 68%, rgba(0, 0, 0, 1) 78%, rgba(0, 0, 0, 0.4) 85%, rgba(0, 0, 0, 0.3) 93%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 68%, rgba(0, 0, 0, 1) 78%, rgba(0, 0, 0, 0.4) 85%, rgba(0, 0, 0, 0.3) 93%, rgba(0, 0, 0, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#000000", GradientType=1);
     color: #fff;
     width: 60vw;
+    min-width: max-content;
     height: 550px;
     position: absolute;
     left: 0;
@@ -110,9 +151,23 @@
     margin-top: 20px;
     height: 280px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     overflow-x: auto;
     overflow-y: hidden;
+    width: 100%;
+}
+
+.ccMobile {
+    margin-top: 20px;
+    height: max-content;
+    /*display: flex;*/
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: none;
+    width: 100%;
 }
 
 .card1 {
@@ -128,7 +183,6 @@
 }
 
 
-
 .card1:hover {
     border: white 5px solid;
 }
@@ -138,28 +192,34 @@
     left: 0;
     top: 0;
     width: 390px;
-    height: 280px;
-    font-size: 30px;
+    height: 270px;
+    font-size: 40px;
+    font-weight: 500;
     z-index: 10;
     justify-content: center;
     align-items: center;
     display: flex;
+    border-radius: 54px;
 
+}
+.tt5 {
+    font-weight: 500;
+    color: white;
+    font-size: 25px;
 }
 
 .blf {
     background: rgb(0, 0, 0);
-    background: -moz-linear-gradient(180deg, rgba(0, 0, 0, 0.6166841736694677) 44%, rgba(255, 255, 255, 0) 60%);
-    background: -webkit-linear-gradient(180deg, rgba(0, 0, 0, 0.6166841736694677) 44%, rgba(255, 255, 255, 0) 60%);
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.6166841736694677) 44%, rgba(255, 255, 255, 0) 60%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#ffffff", GradientType=1);
-    border-top-right-radius: 54px;
-    border-top-left-radius: 54px;
+    background: -moz-linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 34%, rgba(0, 0, 0, 0.3) 64%, rgba(0, 0, 0, 0) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 34%, rgba(0, 0, 0, 0.3) 64%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 34%, rgba(0, 0, 0, 0.3) 64%, rgba(0, 0, 0, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#000000", GradientType=1);
     position: absolute;
     top: 0;
     left: 0;
     width: 390px;
-    height: 280px;
+    height: 270px;
+    border-radius: 54px;
 
 }
 
@@ -169,15 +229,78 @@
     top: 0;
     left: 0;
     width: 390px;
-    height: 280px;
+    height: 270px;
     background-color: transparent;
     transition: all 0.3s ease;
     z-index: 11;
 
 }
 
+.card2 {
+    display: flex;
+    justify-content: flex-start;
+    border: #C13100 1px solid;
+    border-radius: 19px;
+    max-width: 400px;
+    max-height: 258px;
+    width: 100%;
+    margin-top: 25px;
+}
+
 
 .rHover:hover {
-    background-color: #c1310052;
+    background-color: rgba(193, 49, 0, 0.32);
     cursor: pointer;
+}
+
+@media (width < 843px) {
+    .bl1 {
+        display: none;
+    }
+}
+
+@media (width < 1100px) {
+    .cc2 {
+        display: none;
+    }
+
+    .ccMobile {
+        display: flex;
+    }
+
+    .img {
+        width: 100%;
+        border-radius: 54px;
+
+    }
+}
+
+@media (width < 1400px) {
+
+    .rHover {
+        width: 100%;
+        height: 270px;
+    }
+
+    .tt3 {
+        font-size: clamp(35px, 1.5vw, 35px);
+        width: 100%;
+    }
+
+    .blf {
+        width: 100%;
+    }
+
+    .t2 {
+        font-size: clamp(16px, 1.5vw, 25px);
+    }
+
+    .t1 {
+        font-size: 33px;
+    }
+
+    .cont {
+        width: 100vw;
+
+    }
 }
