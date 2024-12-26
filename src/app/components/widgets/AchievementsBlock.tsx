@@ -158,7 +158,7 @@ const AchievementsBlock: FC<IProps> = ({list}) => {
     return (
         <div className={` flex justify-center flex-col items-center`}
              style={{backgroundImage: `url(/backgrounds/2nd.png)`}}>
-            {isMobileDevice ? <Bold size={36}>ДОСТИЖЕНИЕ</Bold> : <Text size={82}>ДОСТИЖЕНИЕ</Text>}
+            {isMobileDevice ? <Bold size={36}>ДОСТИЖЕНИЯ</Bold> : <Text size={82}>ДОСТИЖЕНИЯ</Text>}
             <div className="content">
 
                 <div className={cl.cont} id="main">
