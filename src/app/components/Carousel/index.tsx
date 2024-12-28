@@ -15,7 +15,7 @@ const MyCarousel: FC<Props> = ({src, className, ...props}) => {
   return (
     <>
       <section
-        className={`${styles.embla} gap-6 flex flex-col w-full`}
+        className={`${styles.embla} gap-6 flex flex-col w-full z-10`}
         {...props}>
         <div className={'overflow-hidden'} ref={emblaRef}>
           <div className={`${styles.embla__container} flex px-8`}>

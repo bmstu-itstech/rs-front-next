@@ -1,4 +1,5 @@
 'use client';
+import Contacts from './pages/Contacts';
 import Image from 'next/image';
 import News from './pages/News';
 import { usecase_default } from './components/Carousel/Carousel.usecase';
@@ -6,24 +7,20 @@ import { TitleBlock } from "../components/widgets";
 import Fullscreen from "../components/shared/Fullscreen";
 import { InfoBlock } from "../components/features";
 
-function HomeWithHeader() { // TODO: объединить с Home
+function Home() { // TODO: объединить с Home
   return (
     <>
     <Fullscreen background="/backgrounds/1st.png" needsTopShadow needsBottomShadow>
       <TitleBlock />
     </Fullscreen>
     <Fullscreen background="/backgrounds/2nd.png" needsTopShadow>
-      <InfoBlock
-        title="НОВОСТИ"
-        children="News"
-      />
+        <News
+            title="НОВОСТИ" {...usecase_default}
+        />
     </Fullscreen>
-    <Fullscreen background="/backgrounds/3rd.png" />
+    <AchievementsBlock list={undefined}/>
     <Fullscreen background="/backgrounds/4th.png" />
+    <Contacts/>
     </>
   );
-};
-
-export default function Home() {
-  return <News {...usecase_default} />;
 };
