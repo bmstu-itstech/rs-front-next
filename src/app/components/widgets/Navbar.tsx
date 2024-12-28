@@ -1,5 +1,5 @@
 "use client";
-import { memo, useState } from "react";
+import {memo, useEffect, useState} from "react";
 import { Logo } from "../icons";
 import { isMobile } from "../hooks";
 import { Bold, Text } from "../shared";
@@ -19,6 +19,14 @@ const Navbar = memo(() => {
       <Logo type="crown" />
     </>
   );
+
+  const [show, setShow] = useState(true);
+
+    useEffect(() => {
+        window.onscroll = () => {
+            setShow(window.scrollY === 0);
+        };
+    }, []);
 
   const renderMobileMenu = () => (
     <AnimatePresence>
@@ -92,34 +100,34 @@ const Navbar = memo(() => {
   );
 
   return (
-    <div className="fixed left-0 right-0 top-0 z-20 flex justify-center bg-transparent select-none outer">
-      <div
-        className={`flex items-center gap-[40px] w-[99%] max-w-[1600px] bg-transparent inner ${
-          isMobileDevice ? "h-[120px] py-2.5" : "h-[200px] py-2.5"
-        }`}
-      >
-        <div className="absolute inset-x-0 top-0 left-0 h-1 bg-gradient-to-t from-transparent to-black"></div>
-        {!isMobileDevice && addDesktopLogos()}
-        <Logo type="cmr" />
-        <div className="relative ml-auto cursor-pointer">
-          <motion.img
-            src={`/svg/${isOpen ? "close" : "menu"}_icon.svg`}
-            onClick={toggleMenu}
-            alt="menu icon"
-            className={isMobileDevice ? isOpen ? "invisible" : "pr-[15px]" : ""}
-            whileHover={{ scale: 0.9 }}
-            whileTap={{ scale: 0.7 }}
-            whileInView={{ scale: isMobileDevice ? 0.5 : 0.8 }}
-            transition={{
-              type: "spring",
-              stiffness: 400,
-              damping: 10,
-            }}
-          />
-          {isOpen && renderMobileMenu()}
-        </div>
+      <div className="fixed left-0 right-0 top-0 z-20 flex bg-transparent select-none">
+          <div className={`w-full md:px-20 ${isMobileDevice ? "h-[120px] py-5" : "h-[200px] py-5"} flex items-center justify-between`}>
+              <div className="absolute inset-x-0 top-0 left-0 h-1 bg-gradient-to-t from-transparent to-black"></div>
+              <div className="flex items-center gap-[40px]">
+                  <div className="flex items-center gap-[40px] mr-auto">
+                      {(!isMobileDevice && show) && addDesktopLogos()}
+                      {show && <Logo type="cmr" />}
+                  </div>
+              </div>
+              <div className="relative cursor-pointer">
+                  <motion.img
+                      src={`/svg/${isOpen ? "close" : "menu"}_icon.svg`}
+                      onClick={toggleMenu}
+                      alt="menu icon"
+                      className={isMobileDevice ? isOpen ? "invisible" : "pr-[15px]" : ""}
+                      whileHover={{ scale: 0.9 }}
+                      whileTap={{ scale: 0.7 }}
+                      whileInView={{ scale: isMobileDevice ? 0.5 : 0.8 }}
+                      transition={{
+                          type: "spring",
+                          stiffness: 400,
+                          damping: 10,
+                      }}
+                  />
+                  {isOpen && renderMobileMenu()}
+              </div>
+          </div>
       </div>
-    </div>
   );
 });
 
