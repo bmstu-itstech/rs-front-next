@@ -48,8 +48,8 @@ const AcElement: FC<Props> = ({activeBlock, onClick, t, c}) => {
                 {c % 2 == 0 ? <>
                         <Image src={activeBlock?.imageUrl ? activeBlock?.imageUrl : ExampleImage} alt={""}
                                className={cl.bl + " " + cl.img3}
-                               width={390}
-                               height={280}
+                               width={200}
+                               height={400}
 
                         />
                         <div className={cl.br + " " + cl.borderLeft + " " + cl.btt}>
@@ -71,8 +71,9 @@ const AcElement: FC<Props> = ({activeBlock, onClick, t, c}) => {
                         </div>
                         <Image src={activeBlock?.imageUrl ? activeBlock?.imageUrl : ExampleImage} alt={""}
                                className={cl.br + " " + cl.img3}
-                               width={390}
-                               height={280}
+                               width={200}
+                               height={400}
+
 
                         />
 
