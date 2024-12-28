@@ -8,7 +8,7 @@ import {
 } from './components/Card/Card.usecase';
 const Contacts: FC<Props> = ({className, ...props}) => {
   return (
-    <PageLayout title='Контакты' className={className} {...props}>
+    <PageLayout title='Контакты' className={`${className} text-white justify-center`} {...props}>
       <div className='flex w-full justify-center items-center gap-[5%]'>
         <Card
           className='flex flex-col justify-end gap-2 h-full items-center pb-8 aspect-[5/6] max-w-[35rem] bg-background_director bg-cover relative 

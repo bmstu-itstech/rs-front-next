@@ -4,6 +4,7 @@ import News from './pages/News';
 import { usecase_default } from './components/Carousel/Carousel.usecase';
 import {TitleBlock, AchievementsBlock} from "./components/widgets";
 import Fullscreen from "./components/shared/Fullscreen";
+import Footer from "@/components/Footer";
 
 export default function Home() { // TODO: объединить с Home
   return (
@@ -17,8 +18,8 @@ export default function Home() { // TODO: объединить с Home
         />
     </Fullscreen>
     <AchievementsBlock list={undefined}/>
-    <Fullscreen background="/backgrounds/4th.png" />
     <Contacts/>
+    <Footer val={'Footer'}/>
     </>
   );
 };
