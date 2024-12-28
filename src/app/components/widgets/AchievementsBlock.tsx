@@ -157,16 +157,16 @@ const AchievementsBlock: FC<IProps> = ({list}) => {
 
     return (
         <div className={` flex justify-center flex-col items-center`}
-             style={{backgroundImage: `url(/backgrounds/2nd.png)`}}>
+             style={{backgroundImage: `url(/backgrounds/2nd.png)`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}>
             {isMobileDevice ? <Bold size={36}>ДОСТИЖЕНИЯ</Bold> : <Text size={82}>ДОСТИЖЕНИЯ</Text>}
             <div className="content">
 
                 <div className={cl.cont} id="main">
-                    <div className={cl.bl1}>
+                    <div className={`${cl.bl1}`}>
                         <div className={cl.black}></div>
                         <div/>
-                        <div className={cl.leftBl}>
-                            <div>
+                        <div className={`${cl.leftBl} grid grid-cols-2 grid-rows-3`}>
+                            <div className={"grid col-span-1 row-span-2 text-ellipsis"}>
                                 <div className={cl.t1}>
                                     {activeBlock?.name}
                                 </div>
@@ -174,7 +174,7 @@ const AchievementsBlock: FC<IProps> = ({list}) => {
                                     {activeBlock?.description}
                                 </div>
                             </div>
-                            <div className={cl.btn}>
+                            <div className={`${cl.btn} grid row-span-1 row-start-3 self-end`}>
                                 {activeBlock?.button.map((el, i) => (
                                     <a key={i} href={el.url}>
                                         <div className={cl.btn1}><span
@@ -192,9 +192,11 @@ const AchievementsBlock: FC<IProps> = ({list}) => {
                                height={650}/>
                     </div>
 
-                    <div className={cl.cc2}>
+                    <div className={`${cl.cc2} grid grid-cols-3`}>
                         {otherItems?.map((el) => (
-                            <AcElement activeBlock={el} key={el.id} onClick={() => changeValue(el)} t={1}/>
+                            <div key={el.id} className={"grid col-span-1"}>
+                                <AcElement activeBlock={el} onClick={() => changeValue(el)} t={1}/>
+                            </div>
                         ))}
                     </div>
 
