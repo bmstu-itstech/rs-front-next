@@ -1,8 +1,11 @@
+'use client';
+import Contacts from './pages/Contacts';
+import News from './pages/News';
+import { usecase_default } from './components/Carousel/Carousel.usecase';
 import { TitleBlock } from "../components/widgets";
 import Fullscreen from "../components/shared/Fullscreen";
-import { InfoBlock } from "../components/features";
 
-export default function Home() {
+export default function Home() { // TODO: объединить с Home
   return (
     <>
     <Fullscreen background="/backgrounds/1st.png" needsTopShadow needsBottomShadow>
@@ -14,7 +17,6 @@ export default function Home() {
         children="News"
       />
     </Fullscreen>
-    <Fullscreen background="/backgrounds/3rd.png" />
     <Fullscreen background="/backgrounds/4th.png" />
     </>
   );
