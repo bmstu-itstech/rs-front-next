@@ -1,6 +1,6 @@
 import type {FC} from 'react';
-import Props from './ArrowRight.props';
 import Image from 'next/image';
+import {Props} from './ArrowRight.props';
 import icon from '@/assets/arrow-right.svg';
 
 const ArrowRight: FC<Props> = ({className, ...props}) => {

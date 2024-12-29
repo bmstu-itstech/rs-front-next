@@ -1,7 +1,6 @@
-import {fn} from '@storybook/test';
 import {Meta, StoryObj} from '@storybook/react';
 import Card from '.';
-import Props from './Card.props';
+import {Props} from './Card.props';
 
 const meta: Meta<Props> = {
   component: Card,

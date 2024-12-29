@@ -3,10 +3,10 @@ import type {FC, HTMLAttributes} from 'react';
 
 export const photoCard_usecase = (
   <>
-    <p className='font-normal text-4xl z-10'>Бизиков Валерий</p>
-    <p className='font-bold text-3xl z-10'>Руководитель ЦМР</p>
-    <p className='font-bold text-2xl z-10'>+7 (999) 999-99-99</p>
-    <p className='font-normal text-2xl z-10'>1234567@mail.ru</p>
+    <p className='font-normal text-4xl z-10 text-white'>Бизиков Валерий</p>
+    <p className='font-bold text-3xl z-10 text-white'>Руководитель ЦМР</p>
+    <p className='font-bold text-2xl z-10 text-white'>+7 (999) 999-99-99</p>
+    <p className='font-normal text-2xl z-10 text-white'>1234567@mail.ru</p>
   </>
 );
 
@@ -32,11 +32,11 @@ const Row: FC<Props> = ({name, val, href, className, ...props}) => {
     <p className={`flex gap-4 text-3xl font-medium ${className}`} {...props}>
       {name && <span className='text-gray '>{name}: </span>}
       {href ? (
-        <a href={href} className='flex gap-1'>
+        <a href={href} className='flex gap-1 text-white'>
           {val} <ArrowSocial className='self-start' />
         </a>
       ) : (
-        <>{val}</>
+        <a className='text-white'>{val}</a>
       )}
     </p>
   );

@@ -1,6 +1,5 @@
-import {fn} from '@storybook/test';
 import {Meta, StoryObj} from '@storybook/react';
-import Props from './Contacts.props';
+import {Props} from './Contacts.props';
 import Contacts from '.';
 
 const meta: Meta<Props> = {

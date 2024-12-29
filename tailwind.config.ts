@@ -17,10 +17,10 @@ export default {
         gray: 'rgba(255, 255, 255, 0.7)',
       },
       backgroundImage: {
-        background_image: 'url(@/assets/background.jpeg)',
-        background_image2: 'url(@/assets/background2.jpeg)',
-        background_image2_08: 'url(@/assets/background2-08.jpeg)',
-        background_director: 'url(@/assets/CRM_director.jpeg)',
+        background_image: 'url(./assets/background.jpeg)',
+        background_image2: 'url(./assets/background2.jpeg)',
+        background_image2_08: 'url(./assets/background2-08.jpeg)',
+        background_director: 'url(./assets/CRM_director.jpeg)',
         orange_gradient:
           'linear-gradient(rgba(193, 49, 0, 1), rgba(0, 0, 0, 0))',
       },
