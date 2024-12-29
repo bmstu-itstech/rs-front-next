@@ -3,21 +3,21 @@ import type {FC, HTMLAttributes} from 'react';
 
 export const photoCard_usecase = (
   <>
-    <p className='font-normal text-4xl z-10'>Бизиков Валерий</p>
+    <p className='font-normal text-4xl z-10'>Балакало Максим</p>
     <p className='font-bold text-3xl z-10'>Руководитель ЦМР</p>
-    <p className='font-bold text-2xl z-10'>+7 (999) 999-99-99</p>
-    <p className='font-normal text-2xl z-10'>1234567@mail.ru</p>
+    <p className='font-bold text-2xl z-10'>+7 (906) 568-96-73</p>
+    <p className='font-normal text-2xl z-10'>maks.balakalo@bmstu.ru</p>
   </>
 );
 
 const socials = [
   {
     label: 'ВКонтакте',
-    url: '/',
+    url: 'https://vk.com/robotics_bmstu',
   },
   {
     label: 'Телеграм',
-    url: '/',
+    url: 'https://t.me/robotics_bmstu',
   },
 ];
 
@@ -45,19 +45,18 @@ const Row: FC<Props> = ({name, val, href, className, ...props}) => {
 export const textCard_usecase = (
   <div className='flex flex-col w-full gap-7'>
     <div className='flex flex-col gap-4'>
-      <Row name='Телефон' val='+7 (800) 555-35-35' />
-      <Row name='Email' val='cmr@bmstu.ru' />
+      <Row name='Email' val='robotics.bmstu@yandex.ru' />
     </div>
     <div>
-      <Row val='Политика перс. данных' href='/' />
+      <Row val='Политика перс. данных' href='https://bmstu.ru/about/obrabotka-dannyh' />
     </div>
     <div>
-      <Row val='Сайт Университета' href='/' />
+      <Row val='Сайт Университета' href='https://bmstu.ru/' />
     </div>
     <div className='flex flex-col gap-4'>
       <Row name='Адрес' val='Схема проезда' href='/' />
       <Row val='105005, г. Москва,' />
-      <Row val='2-ая Бауманская, д.5, стр.1' />
+      <Row val='Бауманская ул., 57Б, стр.1' />
     </div>
     <div className='flex flex-col gap-2'>
       <span className='text-3xl font-medium text-gray'>Соцсети: </span>
