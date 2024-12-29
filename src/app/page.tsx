@@ -19,7 +19,7 @@ export default function Home() { // TODO: объединить с Home
     </Fullscreen>
     <AchievementsBlock list={undefined}/>
     <Contacts/>
-    <Footer val={'Footer'}/>
+    <Footer val={'Developed @ 2024 by ITS Tech'}/>
     </>
   );
 };
