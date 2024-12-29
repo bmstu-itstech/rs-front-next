@@ -12,13 +12,12 @@ export default function Home() { // TODO: объединить с Home
       <TitleBlock />
     </Fullscreen>
     <Fullscreen background="/backgrounds/2nd.png" needsTopShadow>
-      <InfoBlock
-        title="НОВОСТИ"
-        children="News"
-      />
+        <News
+            title="НОВОСТИ" {...usecase_default}
+        />
     </Fullscreen>
     <Fullscreen background="/backgrounds/4th.png" />
+    <Contacts/>
     </>
   );
 };
-
