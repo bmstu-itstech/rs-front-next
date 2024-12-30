@@ -33,7 +33,7 @@ const ProgressBar: FC<Props> = ({
   className,
   ...props
 }) => {
-  let progress = ((selectedSnap + 1) / snapCount) * 100;
+  const progress = ((selectedSnap + 1) / snapCount) * 100;
   return (
     <div
       className={`w-3/5 mx-auto bg-white_abs rounded-full h-fit p-1 ${className}`}

@@ -1,26 +1,23 @@
 "use client";
 
-import { memo } from "react";
+import { memo, type ReactNode } from "react";
 
 function Text({
   children,
   size = 16,
-  className = ""
+  className = '',
 }: {
-  children?: any;
+  children?: ReactNode;
   size?: number;
   className?: string;
 }) {
-  
   return (
-    <span 
+    <span
       className={`text text-white block ${className} max-w-[90vw] h-fit`}
-      style={{ fontSize: `${size}px` }}
-    >
+      style={{fontSize: `${size}px`}}>
       {children}
     </span>
   );
-
 };
 
 export default memo(Text);

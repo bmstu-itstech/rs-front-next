@@ -8,7 +8,7 @@ const PageLayout: FC<Props> = ({title, children, className, ...props}) => {
       after:absolute after:h-full after:w-full after:bg-black after:bg-opacity-80 after:-z-0
       ${className}`}
       {...props}>
-      <p className='w-full flex justify-center text-6xl leading-6xl z-10 mt-5 font-normal'>
+      <p className='w-full flex text-white justify-center text-6xl leading-6xl z-10 mt-5 font-normal'>
         {title}
       </p>
       {children}

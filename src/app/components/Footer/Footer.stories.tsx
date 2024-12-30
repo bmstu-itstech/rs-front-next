@@ -1,4 +1,3 @@
-import {fn} from '@storybook/test';
 import {Meta, StoryObj} from '@storybook/react';
 import Footer from '.';
 import Props from './Footer.props';

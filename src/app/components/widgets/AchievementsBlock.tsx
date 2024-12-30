@@ -8,7 +8,7 @@ import AcElement from "@/app/models/acElement";
 import {Bold, Text} from "@/components/shared";
 import {isMobile} from "@/components/hooks";
 
-const defaultItems: AchievementItem[] = [
+export const defaultItems: AchievementItem[] = [
     {
         name: "Достижение 1",
         id: 86451,
@@ -158,7 +158,7 @@ const AchievementsBlock: FC<IProps> = ({list}) => {
     return (
         <div className={` flex justify-center flex-col items-center`}
              style={{backgroundImage: `url(/backgrounds/2nd.png)`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}>
-            {isMobileDevice ? <Bold size={36}>ДОСТИЖЕНИЯ</Bold> : <Text size={82}>ДОСТИЖЕНИЯ</Text>}
+            {isMobileDevice ? <Bold size={36}>ДОСТИЖЕНИЯ</Bold> : <Text size={82} className={"z-10 pt-10"}>ДОСТИЖЕНИЯ</Text>}
             <div className="content">
 
                 <div className={cl.cont} id="main">
@@ -194,7 +194,7 @@ const AchievementsBlock: FC<IProps> = ({list}) => {
 
                     <div className={`${cl.cc2} grid grid-cols-3`}>
                         {otherItems?.map((el) => (
-                            <div key={el.id} className={"grid col-span-1"}>
+                            <div key={el.id} className={"grid col-span-1 z-10"}>
                                 <AcElement activeBlock={el} onClick={() => changeValue(el)} t={1}/>
                             </div>
                         ))}

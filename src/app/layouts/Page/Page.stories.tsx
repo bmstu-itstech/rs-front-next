@@ -1,4 +1,3 @@
-import {fn} from '@storybook/test';
 import {Meta, StoryObj} from '@storybook/react';
 import PageLayout from '.';
 import Props from './Page.props';

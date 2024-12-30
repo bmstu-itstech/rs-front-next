@@ -1,4 +1,3 @@
-import {fn} from '@storybook/test';
 import {Meta, StoryObj} from '@storybook/react';
 import Props from './Carousel.props';
 import Carousel from '.';
