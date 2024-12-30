@@ -32,7 +32,9 @@ const Row: FC<Props> = ({name, val, href, className, ...props}) => {
     <p className={`flex gap-4 text-3xl font-medium ${className}`} {...props}>
       {name && <span className='text-gray '>{name}: </span>}
       {href ? (
-        <a href={href} className='flex gap-1 text-white'>
+        <a
+          href={href}
+          className='flex gap-1 text-white hover:text-orange_main transition-all duration-200 hover:-translate-y-1'>
           {val} <ArrowSocial className='self-start' />
         </a>
       ) : (

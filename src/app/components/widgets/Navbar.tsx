@@ -64,9 +64,9 @@ const Navbar = memo(() => {
             {isMobileDevice && (
               <div className='mr-[10px] mt-[10px]'>
                 <motion.img
-                  src={`/../../assets/close_icon.svg`}
+                  src={'/assets/close_icon.svg'}
                   onClick={toggleMenu}
-                  alt='menu icon'
+                  alt='menu icon mobile'
                   className='scale-[0.5] pr-[15px] w-fit h-fit mt-[15px]'
                   whileHover={{scale: 1.1}}
                   whileTap={{scale: 0.9}}
@@ -78,7 +78,7 @@ const Navbar = memo(() => {
                   }}
                 />
                 <motion.img
-                  src='./../../assets/menu_canvas.svg'
+                  src='/assets/menu_canvas.svg'
                   className={`mt-[5px] ${
                     isMobileDevice ? 'scale-[0.9] mr-[15px]' : ''
                   }`}
@@ -87,7 +87,8 @@ const Navbar = memo(() => {
             )}
             {!isMobileDevice && (
               <motion.img
-                src='/../../assets/menu_canvas.svg'
+                src='/assets/menu_canvas.svg'
+                alt='menu canvas'
                 className={`mt-[5px] ${
                   isMobileDevice ? 'scale-[0.9] mr-[15px]' : ''
                 }`}
@@ -114,9 +115,9 @@ const Navbar = memo(() => {
         </div>
         <div className='relative cursor-pointer'>
           <motion.img
-            src={`/../../assets/${isOpen ? 'close' : 'menu'}_icon.svg`}
+            srcSet={`../assets/menu_icon.svg`}
             onClick={toggleMenu}
-            alt='menu icon'
+            alt='menu icon pc'
             className={
               isMobileDevice ? (isOpen ? 'invisible' : 'pr-[15px]') : ''
             }

@@ -25,8 +25,7 @@ export default function Home() {
       <Fullscreen
         background='/backgrounds/4th.png'
         needsTopShadow
-        needsBottomShadow
-      />{' '}
+        needsBottomShadow></Fullscreen>
       {/* достижения */}
       <Fullscreen background='/backgrounds/2nd.png' needsTopShadow>
         <Contacts />
