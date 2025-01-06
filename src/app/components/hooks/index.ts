@@ -1,5 +1,5 @@
-import isMobile from "./IsMobile";
+import useMobile from "./IsMobile";
 
 export {
-    isMobile
+    useMobile
 };

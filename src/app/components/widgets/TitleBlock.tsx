@@ -1,11 +1,11 @@
 "use client";
 import { memo } from "react";
 import { Bold, Button, Text } from "../shared";
-import { isMobile } from "../hooks";
+import { useMobile } from "../hooks";
 import { motion } from "framer-motion";
 
 function TitleBlock() {
-  const mobile = isMobile();
+  const mobile = useMobile();
 
   const titleVariants = {
     hidden: { opacity: 0, y: -50 },

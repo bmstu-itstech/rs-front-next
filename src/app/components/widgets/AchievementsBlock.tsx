@@ -2,11 +2,10 @@
 import React, {FC, useState} from 'react';
 import cl from "../moduleStyles/AchievementsBlock.module.css"
 import Image from "next/image";
-import ExampleImage from "@/app/assets/b62bf66caf09a0a9bd701c50794bd2e2.jpeg"
+import ExampleImage from "@/app/assets/achievement-example.jpeg"
 import {AchievementItem} from "@/app/models/achievementItem";
 import AcElement from "@/app/models/acElement";
-import {Bold, Text} from "@/components/shared";
-import {isMobile} from "@/components/hooks";
+import PageLayout from '@/app/layouts/Page';
 
 export const defaultItems: AchievementItem[] = [
     {
@@ -15,7 +14,7 @@ export const defaultItems: AchievementItem[] = [
         description: "День программиста – настоящая точка притяжения программистов и топовых российских IT-компаний.\n В течения дня бауманцы смогут узнать всю самую интересную информацию об актуальных\n профессиях в сфере IT.",
         isDefault: true,
         button: [{label: "СМИ", url: "#"}, {label: "О НАС", url: "#"}],
-        imageUrl: "https://s3-alpha-sig.figma.com/img/4502/3ae3/b62bf66caf09a0a9bd701c50794bd2e2?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=WV48kQXE6rhxHusPCkXBcTwwG1CGFG-tSZgMsfKn-7kAa2-TFrXqmJ7oKplcfxH9rmWG~JinlxX8JN5z2wnTiVOWXtAZTJa9GBXhYUkxsG73ZmipPYN1g2nVgj9Gn0yx-0nqaq-TtvwvYhMhq7vUXJuDRz2~WTaSxvtino4rGmcxYScDZaRMYCtofjsXCtZT~3U6ogs5BjNkouQbI68lyarOdEnrd1dRJPrC8QBhUTWDPmqKMmFBbssLn5DZLfq3TUQ8d2bG9GtHs39ZIvcJfWQKXe1uARK5JVtl04qlXlBf2fXXbXjfeAzSxLBf9~DqwrqCE5jR0OnXclYx~A5n3w__"
+        imageUrl: "/achievement-example.jpeg"
     },
     {
         name: "Достижение 2",
@@ -23,8 +22,7 @@ export const defaultItems: AchievementItem[] = [
         description: "День программиста – настоящая точка притяжения программистов и топовых российских IT-компаний.\n В течения дня бауманцы смогут узнать всю самую интересную информацию об актуальных\n профессиях в сфере IT.",
         isDefault: false,
         button: [{label: "СМИ", url: "#"}, {label: "О НАС", url: "#"}],
-        imageUrl: "https://s3-alpha-sig.figma.com/img/4502/3ae3/b62bf66caf09a0a9bd701c50794bd2e2?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=WV48kQXE6rhxHusPCkXBcTwwG1CGFG-tSZgMsfKn-7kAa2-TFrXqmJ7oKplcfxH9rmWG~JinlxX8JN5z2wnTiVOWXtAZTJa9GBXhYUkxsG73ZmipPYN1g2nVgj9Gn0yx-0nqaq-TtvwvYhMhq7vUXJuDRz2~WTaSxvtino4rGmcxYScDZaRMYCtofjsXCtZT~3U6ogs5BjNkouQbI68lyarOdEnrd1dRJPrC8QBhUTWDPmqKMmFBbssLn5DZLfq3TUQ8d2bG9GtHs39ZIvcJfWQKXe1uARK5JVtl04qlXlBf2fXXbXjfeAzSxLBf9~DqwrqCE5jR0OnXclYx~A5n3w__"
-
+        imageUrl: "/achievement-example.jpeg"
     }
     , {
         name: "Достижение 3",
@@ -32,8 +30,7 @@ export const defaultItems: AchievementItem[] = [
         description: "День программиста – настоящая точка притяжения программистов и топовых российских IT-компаний.\n В течения дня бауманцы смогут узнать всю самую интересную информацию об актуальных\n профессиях в сфере IT.",
         isDefault: false,
         button: [{label: "СМИ", url: "#"}, {label: "О НАС", url: "#"}],
-        imageUrl: "https://s3-alpha-sig.figma.com/img/4502/3ae3/b62bf66caf09a0a9bd701c50794bd2e2?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=WV48kQXE6rhxHusPCkXBcTwwG1CGFG-tSZgMsfKn-7kAa2-TFrXqmJ7oKplcfxH9rmWG~JinlxX8JN5z2wnTiVOWXtAZTJa9GBXhYUkxsG73ZmipPYN1g2nVgj9Gn0yx-0nqaq-TtvwvYhMhq7vUXJuDRz2~WTaSxvtino4rGmcxYScDZaRMYCtofjsXCtZT~3U6ogs5BjNkouQbI68lyarOdEnrd1dRJPrC8QBhUTWDPmqKMmFBbssLn5DZLfq3TUQ8d2bG9GtHs39ZIvcJfWQKXe1uARK5JVtl04qlXlBf2fXXbXjfeAzSxLBf9~DqwrqCE5jR0OnXclYx~A5n3w__"
-
+        imageUrl: "/achievement-example.jpeg"
     }
     , {
         name: "Достижение 4",
@@ -41,8 +38,7 @@ export const defaultItems: AchievementItem[] = [
         description: "День Сурка – настоящая точка притяжения программистов и топовых российских IT-компаний.\n В течения дня бауманцы смогут узнать всю самую интересную информацию об актуальных\n профессиях в сфере IT.",
         isDefault: false,
         button: [{label: "СМИ", url: "#"}, {label: "О НАС", url: "#"}],
-        imageUrl: "https://s3-alpha-sig.figma.com/img/4502/3ae3/b62bf66caf09a0a9bd701c50794bd2e2?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=WV48kQXE6rhxHusPCkXBcTwwG1CGFG-tSZgMsfKn-7kAa2-TFrXqmJ7oKplcfxH9rmWG~JinlxX8JN5z2wnTiVOWXtAZTJa9GBXhYUkxsG73ZmipPYN1g2nVgj9Gn0yx-0nqaq-TtvwvYhMhq7vUXJuDRz2~WTaSxvtino4rGmcxYScDZaRMYCtofjsXCtZT~3U6ogs5BjNkouQbI68lyarOdEnrd1dRJPrC8QBhUTWDPmqKMmFBbssLn5DZLfq3TUQ8d2bG9GtHs39ZIvcJfWQKXe1uARK5JVtl04qlXlBf2fXXbXjfeAzSxLBf9~DqwrqCE5jR0OnXclYx~A5n3w__"
-
+        imageUrl: "/achievement-example.jpeg"
     }, {
         name: "Достижение 4",
         id: 2344,
@@ -131,7 +127,6 @@ interface IProps {
 }
 
 const AchievementsBlock: FC<IProps> = ({list}) => {
-    const isMobileDevice = isMobile();
     if (!list) list = defaultItems;
     list = list.slice(0, 4);
     const [activeBlock, setActiveBlock] = useState<AchievementItem | undefined>(list.find((el) => el.isDefault));
@@ -139,7 +134,6 @@ const AchievementsBlock: FC<IProps> = ({list}) => {
     const changeValue = (el: AchievementItem) => {
         if (activeBlock) {
             for (let i = 0; i < list?.length; i++) {
-                // console.log(el?.id, otherItems[i]?.id)
                 if (el?.id === otherItems[i]?.id) {
                     const temp = otherItems[i];
                     const newM = otherItems
@@ -148,6 +142,7 @@ const AchievementsBlock: FC<IProps> = ({list}) => {
                     setOtherItems(newM);
                     setActiveBlock(temp);
                     location.hash = "main";
+                    if (!document) return;
                     document.getElementById("main")?.scrollIntoView();
 
                 }
@@ -156,9 +151,7 @@ const AchievementsBlock: FC<IProps> = ({list}) => {
     }
 
     return (
-        <div className={` flex justify-center flex-col items-center`}
-             style={{backgroundImage: `url(/backgrounds/2nd.png)`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}>
-            {isMobileDevice ? <Bold size={36}>ДОСТИЖЕНИЯ</Bold> : <Text size={82} className={"z-10 pt-10"}>ДОСТИЖЕНИЯ</Text>}
+        <PageLayout title="Достижения">
             <div className="content">
 
                 <div className={cl.cont} id="main">
@@ -166,7 +159,7 @@ const AchievementsBlock: FC<IProps> = ({list}) => {
                         <div className={cl.black}></div>
                         <div/>
                         <div className={`${cl.leftBl} grid grid-cols-2 grid-rows-3`}>
-                            <div className={"grid col-span-1 row-span-2 text-ellipsis"}>
+                            <div className={"w-[500px] grid col-span-1 row-span-2 text-ellipsis"}>
                                 <div className={cl.t1}>
                                     {activeBlock?.name}
                                 </div>
@@ -174,7 +167,7 @@ const AchievementsBlock: FC<IProps> = ({list}) => {
                                     {activeBlock?.description}
                                 </div>
                             </div>
-                            <div className={`${cl.btn} grid row-span-1 row-start-3 self-end`}>
+                            <div className={`${cl.btn} flex row-span-1 row-start-3 self-end`}>
                                 {activeBlock?.button.map((el, i) => (
                                     <a key={i} href={el.url}>
                                         <div className={cl.btn1}><span
@@ -182,8 +175,6 @@ const AchievementsBlock: FC<IProps> = ({list}) => {
                                         </div>
                                     </a>
                                 ))}
-
-                                {/*<div className={cl.btn1}><span className="text text-white block  max-w-[90vw] h-fit">СМИ</span></div>*/}
                             </div>
                         </div>
                         <Image src={activeBlock?.imageUrl ? activeBlock?.imageUrl : ExampleImage} alt={""}
@@ -208,7 +199,7 @@ const AchievementsBlock: FC<IProps> = ({list}) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </PageLayout>
     );
 };
 

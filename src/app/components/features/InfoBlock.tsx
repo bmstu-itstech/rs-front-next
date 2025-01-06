@@ -2,7 +2,7 @@
 
 import React, {memo} from "react";
 import {Bold, Text} from "../shared";
-import {isMobile} from "../hooks";
+import {useMobile} from "../hooks";
 
 function InfoBlock({
                        title = "Title",
@@ -12,7 +12,7 @@ function InfoBlock({
     children?: React.ReactNode;
 }) {
 
-    const mobile = isMobile();
+    const mobile = useMobile();
 
     return (
         <div className="max-w-[1600px] justify-center">
