@@ -1,4 +1,4 @@
-import { HardathonInputModel, IHardathon } from "../types";
+import { HardathonInputModel, IHardathon } from "@/app/types";
 import { isDict, isString } from "./base";
 import Ajv, { JSONSchemaType } from "ajv";
 

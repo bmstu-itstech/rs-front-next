@@ -1,6 +1,6 @@
 import { v1 } from "uuid";
 import { Model, Schema, model } from "mongoose";
-import { INews, NewsInputModel } from "../types";
+import { INews, NewsInputModel } from "@/app/types";
 
 interface NewsModel extends Model<INews> {
     getNews(offset: number): Promise<INews[]>;

@@ -1,6 +1,6 @@
 import { v1 } from "uuid";
 import { Model, Schema, model } from "mongoose";
-import { EventInputModel, IEvent } from "../types";
+import { EventInputModel, IEvent } from "@/app/types";
 
 interface EventModel extends Model<IEvent, {}, {}> {
     get(offset: number): Promise<IEvent[]>;

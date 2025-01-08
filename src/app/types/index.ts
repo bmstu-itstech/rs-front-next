@@ -1,29 +1,29 @@
-export {
+export type {
     HardathonInputModel,
     IHardathon
 } from "./HardathonInputModel";
 
-export {
+export type {
     AchievementInputModel,
     IAchievement
 } from "./AchievementInputModel";
 
-export {
+export type {
     EventInputModel,
     IEvent
 } from "./EventInputModel";
 
-export {
+export type {
     HardathonProjectInputModel,
     IHardathonProject
 } from "./HardathonProjectInputModel";
 
-export {
+export type {
     NewsInputModel,
     INews
 } from "./NewsInputModel";
 
-export {
+export type {
     DocInputModel,
     IDoc
 } from "./DocInputModel";

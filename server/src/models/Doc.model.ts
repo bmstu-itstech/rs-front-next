@@ -1,6 +1,6 @@
 import { v1 } from "uuid";
 import { Model, Schema, model } from "mongoose";
-import { DocInputModel, IDoc } from "../types";
+import { DocInputModel, IDoc } from "@/app/types";
 
 interface DocModel extends Model<IDoc, {}, {}> {
     getByIds(ids: string[]): Promise<IDoc[]>;

@@ -16,15 +16,15 @@ app.use("/api", api);
 const PORT = process.env.PORT || 8080;
 const DB_URI = process.env.DB_URI || "mongodb://localhost:27017";
 const dev = process.env.NODE_ENV !== 'production';
-const frontend = next({ dev });
-const handle = frontend.getRequestHandler();
-
-frontend.prepare().then(() => {
-    app.use("*", (req, res) => handle(req, res));
-});
 
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
     res.status(500).send({ message: err.message });
+});
+
+const frontend = next({ dev });
+const handle = frontend.getRequestHandler();
+frontend.prepare().then(() => {
+    app.use("*", (req, res) => handle(req, res));
 });
 
 async function start() {

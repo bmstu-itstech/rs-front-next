@@ -1,5 +1,5 @@
 import Ajv, { JSONSchemaType } from "ajv";
-import { EventInputModel, IEvent } from "../types";
+import { EventInputModel, IEvent } from "@/app/types";
 import { isDict, isNumber, isString } from "./base";
 
 const ajv = new Ajv();

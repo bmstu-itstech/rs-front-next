@@ -1,6 +1,6 @@
 import { v1 } from "uuid";
 import { Model, Schema, model } from "mongoose";
-import { HardathonInputModel, IHardathon } from "../types";
+import { HardathonInputModel, IHardathon } from "@/app/types";
 
 interface HardathonModel extends Model<IHardathon, {}, {}> {
     get(offset: number): Promise<IHardathon[]>;

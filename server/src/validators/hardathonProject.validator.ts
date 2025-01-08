@@ -1,5 +1,5 @@
 import Ajv, { JSONSchemaType } from "ajv";
-import { HardathonProjectInputModel, IHardathonProject } from "../types";
+import { HardathonProjectInputModel, IHardathonProject } from "@/app/types";
 import { isDict, isString } from "./base";
 
 const ajv = new Ajv();

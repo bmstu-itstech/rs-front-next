@@ -1,6 +1,6 @@
 import { v1 } from "uuid";
 import { Model, Schema, model } from "mongoose";
-import { AchievementInputModel, IAchievement } from "../types";
+import { AchievementInputModel, IAchievement } from "@/app/types";
 
 interface AchievementModel extends Model<IAchievement, {}, {}> {
     get(offset: number): Promise<IAchievement[]>;

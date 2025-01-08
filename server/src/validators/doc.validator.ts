@@ -1,5 +1,5 @@
 import Ajv, { JSONSchemaType } from "ajv";
-import { DocInputModel, IDoc } from "../types";
+import { DocInputModel, IDoc } from "@/app/types";
 import { isDict, isString } from "./base";
 
 const ajv = new Ajv();

@@ -1,6 +1,6 @@
 import Ajv, { JSONSchemaType } from "ajv";
-import { INews, NewsInputModel } from "../types";
-import { isDict, isString } from "./base";
+import { INews, NewsInputModel } from "@/app/types";
+import { isString } from "./base";
 
 const ajv = new Ajv();
 

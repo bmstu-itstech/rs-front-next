@@ -1,5 +1,5 @@
 import Ajv, { JSONSchemaType } from "ajv";
-import { AchievementInputModel, IAchievement } from "../types";
+import { AchievementInputModel, IAchievement } from "@/app/types";
 import { isString } from "./base";
 
 const ajv = new Ajv();
