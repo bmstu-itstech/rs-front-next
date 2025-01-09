@@ -1,14 +1,14 @@
 "use client";
 import {memo, useEffect, useState} from "react";
-import { Logo } from "../icons";
-import { isMobile } from "../hooks";
-import { Bold, Text } from "../shared";
+import Logo from "../icons/Logo";
+import { useMobile } from "../hooks";
+import { Bold } from "../shared";
 import { motion, AnimatePresence } from "framer-motion";
 import { MenuItem } from "../features";
 
 const Navbar = memo(() => {
 
-  const isMobileDevice = isMobile();
+  const isMobileDevice = useMobile();
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
@@ -68,7 +68,7 @@ const Navbar = memo(() => {
             {isMobileDevice && (
               <div className="mr-[10px] mt-[10px]">
                 <motion.img
-                  src={`/svg/close_icon.svg`}
+                  src={`/close_icon.svg`}
                   onClick={toggleMenu}
                   alt="menu icon"
                   className="scale-[0.5] pr-[15px] w-fit h-fit mt-[15px]"
@@ -82,14 +82,14 @@ const Navbar = memo(() => {
                   }}
                 />
                 <motion.img
-                  src="/svg/menu_canvas.svg"
+                  src="/menu_canvas.svg"
                   className={`mt-[5px] ${isMobileDevice ? "scale-[0.9] mr-[15px]" : ""}`}
                 />
               </div>
             )}
             {!isMobileDevice && (
               <motion.img
-                src="/svg/menu_canvas.svg"
+                src="/menu_canvas.svg"
                 className={`mt-[5px] ${isMobileDevice ? "scale-[0.9] mr-[15px]" : ""}`}
               />
             )}
@@ -106,12 +106,12 @@ const Navbar = memo(() => {
               <div className="flex items-center gap-[40px]">
                   <div className="flex items-center gap-[40px] mr-auto">
                       {(!isMobileDevice && show) && addDesktopLogos()}
-                      {show && <Logo type="cmr" />}
+                      {show && <Logo type="crm" />}
                   </div>
               </div>
               <div className="relative cursor-pointer">
                   <motion.img
-                      src={`/svg/${isOpen ? "close" : "menu"}_icon.svg`}
+                      src={`/${isOpen ? "close" : "menu"}_icon.svg`}
                       onClick={toggleMenu}
                       alt="menu icon"
                       className={isMobileDevice ? isOpen ? "invisible" : "pr-[15px]" : ""}
@@ -130,5 +130,7 @@ const Navbar = memo(() => {
       </div>
   );
 });
+
+Navbar.displayName = "Navbar";
 
 export default Navbar;

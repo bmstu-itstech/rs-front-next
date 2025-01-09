@@ -1,6 +1,6 @@
 'use client';
 import {memo, type HTMLAttributes, type FC} from 'react';
-import isMobile from '@/app/hooks/isMobile';
+import { useMobile } from '@/app/components/hooks'
 import BmstuLogo from '../BmstuLogo';
 import CrmLogo from '../CrmLogo';
 import CrownLogo from '../CrownLogo';
@@ -29,7 +29,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 }
 
 const Logo: FC<Props> = ({type, className, ...props}) => {
-  const mobile = isMobile();
+  const mobile = useMobile();
   return (
     <NameToComp
       type={type}

@@ -2,7 +2,7 @@
 import React, {FC, useState} from 'react';
 import cl from "../components/moduleStyles/AchievementsBlock.module.css";
 import Image from "next/image";
-import ExampleImage from "@/assets/b62bf66caf09a0a9bd701c50794bd2e2.jpeg";
+import ExampleImage from "@/app/assets/achievement-example.jpeg"
 import GroupImage from "@/assets/Group 52.svg"
 import {AchievementItem} from "@/app/models/achievementItem";
 
@@ -30,7 +30,7 @@ const AcElement: FC<Props> = ({activeBlock, onClick, t, c}) => {
                        width={390}
                        height={280}/>
                 <div className={cl.tt3}><span
-                    className={"text text-white block  max-w-[90vw] h-fit"}
+                    className={"text text-white block  max-w-[90vw] h-fit uppercase"}
                     style={{visibility: isHovered ? 'hidden' : 'visible'}}>{activeBlock.name}</span></div>
                 <div className={cl.tt3}><span
                     className={"text text-white block  max-w-[90vw] h-fit"}
@@ -71,8 +71,8 @@ const AcElement: FC<Props> = ({activeBlock, onClick, t, c}) => {
                         </div>
                         <Image src={activeBlock?.imageUrl ? activeBlock?.imageUrl : ExampleImage} alt={""}
                                className={cl.br + " " + cl.img3}
-                               width={390}
-                               height={280}
+                               width={200}
+                               height={400}
 
                         />
 

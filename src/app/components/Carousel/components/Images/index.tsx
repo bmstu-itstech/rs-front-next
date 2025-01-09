@@ -4,10 +4,7 @@ import type Props from './Images.props';
 import ArrowRight from '@/app/components/icons/ArrowRight';
 
 const CarouselItem: FC<Props> = ({
-  src,
-  title,
-  description,
-  moreInfoText,
+  item,
   index,
   className,
   ...props
@@ -18,7 +15,7 @@ const CarouselItem: FC<Props> = ({
       {...props}>
       <div className=' h-[42%] w-full select-none'>
         <Image
-          src={src}
+          src={item.coverUrl}
           width={300}
           height={200}
           alt={`${index}`}
@@ -33,15 +30,18 @@ const CarouselItem: FC<Props> = ({
       </div>
       <div className='bg-orange_main flex justify-center py-1 text-white_abs w-full select-none'>
         <p className='w-2/3 items-center text-2xl mx-auto justify-center line-clamp-2 text-center max-w-96 select-none'>
-          {title}
+          {item.title}
         </p>
       </div>
       <div className='w-full flex flex-col justify-between items-center px-6 py-3 bg-white h-full'>
         <p className='w-full flex-1 text-black text-lg line-clamp-3 max-h-full  font-normal select-none'>
-          {description}
+          {item.description}
         </p>
-        <div className='flex items-center justify-between h-fit w-full text-black text-base select-none'>
-          <p className='line-clamp-1'>{moreInfoText}</p>
+        <div
+          className='flex items-center justify-between h-fit w-full text-black text-base select-none cursor-pointer'
+          onClick={() => window.location.href = item.actionLink}
+        >
+          <p className='line-clamp-1'>{item.caption}</p>
           <ArrowRight className='w-10 cursor-pointer' />
         </div>
       </div>

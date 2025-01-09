@@ -1,12 +1,12 @@
 "use client";
 
-import { memo } from "react";
+import { memo, ReactNode } from "react";
 import { Text } from "../Typography";
-import { isMobile } from "../../hooks";
+import { useMobile } from "@/app/components/hooks";
 import { motion } from "framer-motion";
 
-function Button({ children }: { children?: any }) {
-  const mobile = isMobile();
+function Button({ children }: { children?: ReactNode }) {
+  const mobile = useMobile();
 
   return (
     <motion.div

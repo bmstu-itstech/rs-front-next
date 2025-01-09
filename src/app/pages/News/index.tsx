@@ -4,10 +4,10 @@ import Props from './News.props';
 import Carousel from '@/components/Carousel';
 import PageLayout from '@/app/layouts/Page';
 
-const News: FC<Props> = ({src, className, ...props}) => {
+const News: FC<Props> = ({items, className, ...props}) => {
   return (
     <PageLayout title='Новости' className={className} {...props}>
-      <Carousel src={src} />
+      <Carousel items={items} />
     </PageLayout>
   );
 };
