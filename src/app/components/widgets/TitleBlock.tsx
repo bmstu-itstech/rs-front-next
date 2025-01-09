@@ -34,8 +34,11 @@ function TitleBlock() {
       </motion.div>
       <motion.div variants={textVariants}>
         <Text size={mobile ? 17 : 30} className="max-w-[990px]">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-          aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Центр Молодежной Робототехники - это инновационное пространство, предназначенное для обучения
+          и развития молодых талантов в области робототехники, искусственного интеллекта и программирования.
+          Наша миссия - предоставить молодежи возможность исследовать и создавать будущее с помощью
+          передовых технологий и творчества. Присоединяйтесь к нам и откройте для себя мир будущего
+          уже сегодня!
         </Text>
       </motion.div>
       <motion.div className="py-[10px]" variants={buttonVariants}>
