@@ -1,0 +1,35 @@
+@font-face {
+  font-family: ALS Sector;
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/ALS_Sector-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: ALS Sector;
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/ALS_Sector-Bold.otf") format("opentype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-family: "ALS Sector", sans-serif;
+}
+
+:root {
+  --max-container-width: 1600px;
+  --mobile-width: 700px;
+  --primary-color: #c13000;
+  --text-color: #FFF;
+}
+
+body {
+  background-image: url("/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+

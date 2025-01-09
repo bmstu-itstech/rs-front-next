@@ -1,0 +1,5 @@
+.arrow-button {
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    padding: 12px;
+}

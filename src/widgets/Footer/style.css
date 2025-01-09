@@ -1,0 +1,24 @@
+.footer-outer {
+    height: 120px;
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-outer .text {
+    font-size: 30px;
+}
+
+@media (max-width: 950px) {
+
+    .footer-outer {
+        height: 90px;
+    }
+
+    .footer-outer .text {
+        font-size: 22px;
+    }
+
+}
