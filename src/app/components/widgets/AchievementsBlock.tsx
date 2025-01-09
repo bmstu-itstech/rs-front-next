@@ -3,123 +3,49 @@ import React, {FC, useState} from 'react';
 import cl from "../moduleStyles/AchievementsBlock.module.css"
 import Image from "next/image";
 import ExampleImage from "@/app/assets/achievement-example.jpeg"
+import image1 from '@/assets/achievement_1.png';
+import image2 from '@/assets/achievement_2.png';
+import image3 from '@/assets/achievement_3.png';
+import image4 from '@/assets/achievement_4.jpg';
 import {AchievementItem} from "@/app/models/achievementItem";
 import AcElement from "@/app/models/acElement";
 import PageLayout from '@/app/layouts/Page';
 
 export const defaultItems: AchievementItem[] = [
     {
-        name: "Достижение 1",
+        name: "Победители «Боя роботов» 1,5 кг",
         id: 86451,
-        description: "День программиста – настоящая точка притяжения программистов и топовых российских IT-компаний.\n В течения дня бауманцы смогут узнать всю самую интересную информацию об актуальных\n профессиях в сфере IT.",
+        description: `Команда «Гурманы» одержала серию из 5 побед битв
+        Robot Fight Club, что дало им звание чемпионов 23 сезона. Команда
+        выступила с роботом «Lilcheese» весом 1,5 кг и вооружённого барабанным спиннером`,
         isDefault: true,
-        button: [{label: "СМИ", url: "#"}, {label: "О НАС", url: "#"}],
-        imageUrl: "/achievement-example.jpeg"
+        button: [{label: "Фото", url: "#"}, {label: "СМИ", url: "#"}],
+        imageUrl: image1.src
     },
     {
-        name: "Достижение 2",
+        name: "Призёры Скат 2024",
         id: 245,
         description: "День программиста – настоящая точка притяжения программистов и топовых российских IT-компаний.\n В течения дня бауманцы смогут узнать всю самую интересную информацию об актуальных\n профессиях в сфере IT.",
         isDefault: false,
         button: [{label: "СМИ", url: "#"}, {label: "О НАС", url: "#"}],
-        imageUrl: "/achievement-example.jpeg"
-    }
-    , {
-        name: "Достижение 3",
+        imageUrl: image2.src
+    },
+    {
+        name: "«АэроТех»",
         id: 36736,
         description: "День программиста – настоящая точка притяжения программистов и топовых российских IT-компаний.\n В течения дня бауманцы смогут узнать всю самую интересную информацию об актуальных\n профессиях в сфере IT.",
         isDefault: false,
         button: [{label: "СМИ", url: "#"}, {label: "О НАС", url: "#"}],
-        imageUrl: "/achievement-example.jpeg"
-    }
-    , {
-        name: "Достижение 4",
+        imageUrl: image3.src
+    },
+    {
+        name: "Хардатон «Инженерный вызов»",
         id: 435467,
         description: "День Сурка – настоящая точка притяжения программистов и топовых российских IT-компаний.\n В течения дня бауманцы смогут узнать всю самую интересную информацию об актуальных\n профессиях в сфере IT.",
         isDefault: false,
         button: [{label: "СМИ", url: "#"}, {label: "О НАС", url: "#"}],
-        imageUrl: "/achievement-example.jpeg"
-    }, {
-        name: "Достижение 4",
-        id: 2344,
-        description: "День Сурка – настоящая точка притяжения программистов и топовых российских IT-компаний.\n В течения дня бауманцы смогут узнать всю самую интересную информацию об актуальных\n профессиях в сфере IT.",
-        isDefault: false,
-        button: [{label: "СМИ", url: "#"}, {label: "О НАС", url: "#"}],
-        imageUrl: "https://s3-alpha-sig.figma.com/img/4502/3ae3/b62bf66caf09a0a9bd701c50794bd2e2?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=WV48kQXE6rhxHusPCkXBcTwwG1CGFG-tSZgMsfKn-7kAa2-TFrXqmJ7oKplcfxH9rmWG~JinlxX8JN5z2wnTiVOWXtAZTJa9GBXhYUkxsG73ZmipPYN1g2nVgj9Gn0yx-0nqaq-TtvwvYhMhq7vUXJuDRz2~WTaSxvtino4rGmcxYScDZaRMYCtofjsXCtZT~3U6ogs5BjNkouQbI68lyarOdEnrd1dRJPrC8QBhUTWDPmqKMmFBbssLn5DZLfq3TUQ8d2bG9GtHs39ZIvcJfWQKXe1uARK5JVtl04qlXlBf2fXXbXjfeAzSxLBf9~DqwrqCE5jR0OnXclYx~A5n3w__"
-
-    }, {
-        name: "Достижение 4",
-        id: 4876,
-        description: "День Сурка – настоящая точка притяжения программистов и топовых российских IT-компаний.\n В течения дня бауманцы смогут узнать всю самую интересную информацию об актуальных\n профессиях в сфере IT.",
-        isDefault: false,
-        button: [{label: "СМИ", url: "#"}, {label: "О НАС", url: "#"}],
-        imageUrl: "https://s3-alpha-sig.figma.com/img/4502/3ae3/b62bf66caf09a0a9bd701c50794bd2e2?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=WV48kQXE6rhxHusPCkXBcTwwG1CGFG-tSZgMsfKn-7kAa2-TFrXqmJ7oKplcfxH9rmWG~JinlxX8JN5z2wnTiVOWXtAZTJa9GBXhYUkxsG73ZmipPYN1g2nVgj9Gn0yx-0nqaq-TtvwvYhMhq7vUXJuDRz2~WTaSxvtino4rGmcxYScDZaRMYCtofjsXCtZT~3U6ogs5BjNkouQbI68lyarOdEnrd1dRJPrC8QBhUTWDPmqKMmFBbssLn5DZLfq3TUQ8d2bG9GtHs39ZIvcJfWQKXe1uARK5JVtl04qlXlBf2fXXbXjfeAzSxLBf9~DqwrqCE5jR0OnXclYx~A5n3w__"
-
-    }, {
-        name: "Достижение 4",
-        id: 26524,
-        description: "День Сурка – настоящая точка притяжения программистов и топовых российских IT-компаний.\n В течения дня бауманцы смогут узнать всю самую интересную информацию об актуальных\n профессиях в сфере IT.",
-        isDefault: false,
-        button: [{label: "СМИ", url: "#"}, {label: "О НАС", url: "#"}],
-        imageUrl: "https://s3-alpha-sig.figma.com/img/4502/3ae3/b62bf66caf09a0a9bd701c50794bd2e2?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=WV48kQXE6rhxHusPCkXBcTwwG1CGFG-tSZgMsfKn-7kAa2-TFrXqmJ7oKplcfxH9rmWG~JinlxX8JN5z2wnTiVOWXtAZTJa9GBXhYUkxsG73ZmipPYN1g2nVgj9Gn0yx-0nqaq-TtvwvYhMhq7vUXJuDRz2~WTaSxvtino4rGmcxYScDZaRMYCtofjsXCtZT~3U6ogs5BjNkouQbI68lyarOdEnrd1dRJPrC8QBhUTWDPmqKMmFBbssLn5DZLfq3TUQ8d2bG9GtHs39ZIvcJfWQKXe1uARK5JVtl04qlXlBf2fXXbXjfeAzSxLBf9~DqwrqCE5jR0OnXclYx~A5n3w__"
-
-    }, {
-        name: "Достижение 4",
-        id: 46532,
-        description: "День Сурка – настоящая точка притяжения программистов и топовых российских IT-компаний.\n В течения дня бауманцы смогут узнать всю самую интересную информацию об актуальных\n профессиях в сфере IT.",
-        isDefault: false,
-        button: [{label: "СМИ", url: "#"}, {label: "О НАС", url: "#"}],
-        imageUrl: "https://s3-alpha-sig.figma.com/img/4502/3ae3/b62bf66caf09a0a9bd701c50794bd2e2?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=WV48kQXE6rhxHusPCkXBcTwwG1CGFG-tSZgMsfKn-7kAa2-TFrXqmJ7oKplcfxH9rmWG~JinlxX8JN5z2wnTiVOWXtAZTJa9GBXhYUkxsG73ZmipPYN1g2nVgj9Gn0yx-0nqaq-TtvwvYhMhq7vUXJuDRz2~WTaSxvtino4rGmcxYScDZaRMYCtofjsXCtZT~3U6ogs5BjNkouQbI68lyarOdEnrd1dRJPrC8QBhUTWDPmqKMmFBbssLn5DZLfq3TUQ8d2bG9GtHs39ZIvcJfWQKXe1uARK5JVtl04qlXlBf2fXXbXjfeAzSxLBf9~DqwrqCE5jR0OnXclYx~A5n3w__"
-
-    }, {
-        name: "Достижение 4",
-        id: 524,
-        description: "День Сурка – настоящая точка притяжения программистов и топовых российских IT-компаний.\n В течения дня бауманцы смогут узнать всю самую интересную информацию об актуальных\n профессиях в сфере IT.",
-        isDefault: false,
-        button: [{label: "СМИ", url: "#"}, {label: "О НАС", url: "#"}],
-        imageUrl: "https://s3-alpha-sig.figma.com/img/4502/3ae3/b62bf66caf09a0a9bd701c50794bd2e2?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=WV48kQXE6rhxHusPCkXBcTwwG1CGFG-tSZgMsfKn-7kAa2-TFrXqmJ7oKplcfxH9rmWG~JinlxX8JN5z2wnTiVOWXtAZTJa9GBXhYUkxsG73ZmipPYN1g2nVgj9Gn0yx-0nqaq-TtvwvYhMhq7vUXJuDRz2~WTaSxvtino4rGmcxYScDZaRMYCtofjsXCtZT~3U6ogs5BjNkouQbI68lyarOdEnrd1dRJPrC8QBhUTWDPmqKMmFBbssLn5DZLfq3TUQ8d2bG9GtHs39ZIvcJfWQKXe1uARK5JVtl04qlXlBf2fXXbXjfeAzSxLBf9~DqwrqCE5jR0OnXclYx~A5n3w__"
-
-    }, {
-        name: "Достижение 4",
-        id: 2564,
-        description: "День Сурка – настоящая точка притяжения программистов и топовых российских IT-компаний.\n В течения дня бауманцы смогут узнать всю самую интересную информацию об актуальных\n профессиях в сфере IT.",
-        isDefault: false,
-        button: [{label: "СМИ", url: "#"}, {label: "О НАС", url: "#"}],
-        imageUrl: "https://s3-alpha-sig.figma.com/img/4502/3ae3/b62bf66caf09a0a9bd701c50794bd2e2?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=WV48kQXE6rhxHusPCkXBcTwwG1CGFG-tSZgMsfKn-7kAa2-TFrXqmJ7oKplcfxH9rmWG~JinlxX8JN5z2wnTiVOWXtAZTJa9GBXhYUkxsG73ZmipPYN1g2nVgj9Gn0yx-0nqaq-TtvwvYhMhq7vUXJuDRz2~WTaSxvtino4rGmcxYScDZaRMYCtofjsXCtZT~3U6ogs5BjNkouQbI68lyarOdEnrd1dRJPrC8QBhUTWDPmqKMmFBbssLn5DZLfq3TUQ8d2bG9GtHs39ZIvcJfWQKXe1uARK5JVtl04qlXlBf2fXXbXjfeAzSxLBf9~DqwrqCE5jR0OnXclYx~A5n3w__"
-
-    }, {
-        name: "Достижение 4",
-        id: 427725,
-        description: "День Сурка – настоящая точка притяжения программистов и топовых российских IT-компаний.\n В течения дня бауманцы смогут узнать всю самую интересную информацию об актуальных\n профессиях в сфере IT.",
-        isDefault: false,
-        button: [{label: "СМИ", url: "#"}, {label: "О НАС", url: "#"}],
-        imageUrl: "https://s3-alpha-sig.figma.com/img/4502/3ae3/b62bf66caf09a0a9bd701c50794bd2e2?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=WV48kQXE6rhxHusPCkXBcTwwG1CGFG-tSZgMsfKn-7kAa2-TFrXqmJ7oKplcfxH9rmWG~JinlxX8JN5z2wnTiVOWXtAZTJa9GBXhYUkxsG73ZmipPYN1g2nVgj9Gn0yx-0nqaq-TtvwvYhMhq7vUXJuDRz2~WTaSxvtino4rGmcxYScDZaRMYCtofjsXCtZT~3U6ogs5BjNkouQbI68lyarOdEnrd1dRJPrC8QBhUTWDPmqKMmFBbssLn5DZLfq3TUQ8d2bG9GtHs39ZIvcJfWQKXe1uARK5JVtl04qlXlBf2fXXbXjfeAzSxLBf9~DqwrqCE5jR0OnXclYx~A5n3w__"
-
-    }, {
-        name: "Достижение 4",
-        id: 4726,
-        description: "День Сурка – настоящая точка притяжения программистов и топовых российских IT-компаний.\n В течения дня бауманцы смогут узнать всю самую интересную информацию об актуальных\n профессиях в сфере IT.",
-        isDefault: false,
-        button: [{label: "СМИ", url: "#"}, {label: "О НАС", url: "#"}],
-        imageUrl: "https://s3-alpha-sig.figma.com/img/4502/3ae3/b62bf66caf09a0a9bd701c50794bd2e2?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=WV48kQXE6rhxHusPCkXBcTwwG1CGFG-tSZgMsfKn-7kAa2-TFrXqmJ7oKplcfxH9rmWG~JinlxX8JN5z2wnTiVOWXtAZTJa9GBXhYUkxsG73ZmipPYN1g2nVgj9Gn0yx-0nqaq-TtvwvYhMhq7vUXJuDRz2~WTaSxvtino4rGmcxYScDZaRMYCtofjsXCtZT~3U6ogs5BjNkouQbI68lyarOdEnrd1dRJPrC8QBhUTWDPmqKMmFBbssLn5DZLfq3TUQ8d2bG9GtHs39ZIvcJfWQKXe1uARK5JVtl04qlXlBf2fXXbXjfeAzSxLBf9~DqwrqCE5jR0OnXclYx~A5n3w__"
-
-    }, {
-        name: "Достижение 4",
-        id: 333374,
-        description: "День Сурка – настоящая точка притяжения программистов и топовых российских IT-компаний.\n В течения дня бауманцы смогут узнать всю самую интересную информацию об актуальных\n профессиях в сфере IT.",
-        isDefault: false,
-        button: [{label: "СМИ", url: "#"}, {label: "О НАС", url: "#"}],
-        imageUrl: "https://s3-alpha-sig.figma.com/img/4502/3ae3/b62bf66caf09a0a9bd701c50794bd2e2?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=WV48kQXE6rhxHusPCkXBcTwwG1CGFG-tSZgMsfKn-7kAa2-TFrXqmJ7oKplcfxH9rmWG~JinlxX8JN5z2wnTiVOWXtAZTJa9GBXhYUkxsG73ZmipPYN1g2nVgj9Gn0yx-0nqaq-TtvwvYhMhq7vUXJuDRz2~WTaSxvtino4rGmcxYScDZaRMYCtofjsXCtZT~3U6ogs5BjNkouQbI68lyarOdEnrd1dRJPrC8QBhUTWDPmqKMmFBbssLn5DZLfq3TUQ8d2bG9GtHs39ZIvcJfWQKXe1uARK5JVtl04qlXlBf2fXXbXjfeAzSxLBf9~DqwrqCE5jR0OnXclYx~A5n3w__"
-
-    }, {
-        name: "Достижение 4",
-        id: 4444,
-        description: "День Сурка – настоящая точка притяжения программистов и топовых российских IT-компаний.\n В течения дня бауманцы смогут узнать всю самую интересную информацию об актуальных\n профессиях в сфере IT.",
-        isDefault: false,
-        button: [{label: "СМИ", url: "#"}, {label: "О НАС", url: "#"}],
-        imageUrl: "https://s3-alpha-sig.figma.com/img/4502/3ae3/b62bf66caf09a0a9bd701c50794bd2e2?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=WV48kQXE6rhxHusPCkXBcTwwG1CGFG-tSZgMsfKn-7kAa2-TFrXqmJ7oKplcfxH9rmWG~JinlxX8JN5z2wnTiVOWXtAZTJa9GBXhYUkxsG73ZmipPYN1g2nVgj9Gn0yx-0nqaq-TtvwvYhMhq7vUXJuDRz2~WTaSxvtino4rGmcxYScDZaRMYCtofjsXCtZT~3U6ogs5BjNkouQbI68lyarOdEnrd1dRJPrC8QBhUTWDPmqKMmFBbssLn5DZLfq3TUQ8d2bG9GtHs39ZIvcJfWQKXe1uARK5JVtl04qlXlBf2fXXbXjfeAzSxLBf9~DqwrqCE5jR0OnXclYx~A5n3w__"
-
-    },
+        imageUrl: image4.src
+    }
 ];
 
 interface IProps {
@@ -159,7 +85,7 @@ const AchievementsBlock: FC<IProps> = ({list}) => {
                         <div className={cl.black}></div>
                         <div/>
                         <div className={`${cl.leftBl} grid grid-cols-2 grid-rows-3`}>
-                            <div className={"w-[500px] grid col-span-1 row-span-2 text-ellipsis"}>
+                            <div className={"w-[550px] grid col-span-1 row-span-2 text-ellipsis"}>
                                 <div className={cl.t1}>
                                     {activeBlock?.name}
                                 </div>

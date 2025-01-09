@@ -8,7 +8,7 @@ import {CarouselItem} from './components/Images';
 import {imageDefault} from './components/Images/Images.usecase';
 import ProgressBar, {useSelectedSnapDisplay} from './components/ProgressBar';
 
-const MyCarousel: FC<Props> = ({src, className, ...props}) => {
+const MyCarousel: FC<Props> = ({items, className, ...props}) => {
   const [emblaRef, emblaApi] = useEmblaCarousel();
   const {selectedSnap, snapCount} = useSelectedSnapDisplay(emblaApi);
 
@@ -19,11 +19,11 @@ const MyCarousel: FC<Props> = ({src, className, ...props}) => {
         {...props}>
         <div className={'overflow-hidden'} ref={emblaRef}>
           <div className={`${styles.embla__container} flex px-8`}>
-            {src.map((slide, index) => (
+            {items.map((slide, index) => (
               <div
                 className={`${styles.embla__slide} flex justify-center`}
                 key={index}>
-                <CarouselItem src={slide} index={index} {...imageDefault} />
+                <CarouselItem item={slide} index={index} {...imageDefault} />
               </div>
             ))}
           </div>

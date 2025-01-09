@@ -30,7 +30,7 @@ const AcElement: FC<Props> = ({activeBlock, onClick, t, c}) => {
                        width={390}
                        height={280}/>
                 <div className={cl.tt3}><span
-                    className={"text text-white block  max-w-[90vw] h-fit"}
+                    className={"text text-white block  max-w-[90vw] h-fit uppercase"}
                     style={{visibility: isHovered ? 'hidden' : 'visible'}}>{activeBlock.name}</span></div>
                 <div className={cl.tt3}><span
                     className={"text text-white block  max-w-[90vw] h-fit"}

@@ -10,14 +10,13 @@ const rawSchema: JSONSchemaType<NewsInputModel> = {
         title: { type: "string" },
         description: { type: "string" },
         caption: { type: "string" },
-        text: { type: "string" },
         actionLink: { type: "string" },
         coverUrl: { type: "string" },
         isDraft: { type: "boolean" }
     },
     required: [
         "title", "description", "caption",
-        "text", "actionLink", "coverUrl", "isDraft"
+        "actionLink", "coverUrl", "isDraft"
     ],
     additionalProperties: false
 };

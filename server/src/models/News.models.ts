@@ -28,10 +28,6 @@ const schema = new Schema<INews, NewsModel>({
         type: String,
         required: true
     },
-    text: {
-        type: String,
-        required: true
-    },
     actionLink: {
         type: String,
         required: true
