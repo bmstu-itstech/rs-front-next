@@ -7,10 +7,13 @@ import styles from './Carousel.module.css';
 import {CarouselItem} from './components/Images';
 import {imageDefault} from './components/Images/Images.usecase';
 import ProgressBar, {useSelectedSnapDisplay} from './components/ProgressBar';
+import { useMobile } from '../hooks';
+import NewsItem from '../../pages/News/components/NewsItemMobile';
 
 const MyCarousel: FC<Props> = ({items, className, ...props}) => {
   const [emblaRef, emblaApi] = useEmblaCarousel();
   const {selectedSnap, snapCount} = useSelectedSnapDisplay(emblaApi);
+  const mobile = useMobile();
 
   return (
     <>
@@ -20,11 +23,14 @@ const MyCarousel: FC<Props> = ({items, className, ...props}) => {
         <div className={'overflow-hidden'} ref={emblaRef}>
           <div className={`${styles.embla__container} flex px-8`}>
             {items.map((slide, index) => (
-              <div
-                className={`${styles.embla__slide} flex justify-center`}
-                key={index}>
-                <CarouselItem item={slide} index={index} {...imageDefault} />
-              </div>
+              mobile
+                ? <NewsItem {...slide} />
+                : <div
+                    className={`${styles.embla__slide} flex justify-center`}
+                    key={index}
+                  >
+                    <CarouselItem item={slide} index={index} {...imageDefault} />
+                  </div>
             ))}
           </div>
         </div>

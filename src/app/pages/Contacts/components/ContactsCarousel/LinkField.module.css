@@ -1,0 +1,37 @@
+.linkField {
+  display: flex;
+  align-items: start;
+  transition: transform .5s;
+  cursor: pointer;
+}
+
+.linkField * {
+  transition: color .5s, fill .5s;
+}
+
+.linkField:hover {
+  transform: translateY(-3px);
+}
+
+.linkField:hover * {
+  color: var(--primary-color);
+  fill: var(--primary-color);
+}
+
+.linkFieldTitle {
+  font-size: 30px;
+  text-align: left;
+  text-transform: none;
+}
+
+.linkField svg {
+  transform: scale(0.6);
+}
+
+@media (max-width: 950px) {
+
+  .linkFieldTitle {
+      font-size: 18px;
+  }
+
+}

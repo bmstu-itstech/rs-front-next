@@ -6,10 +6,16 @@ import {
   photoCard_usecase,
   textCard_usecase,
 } from './components/Card/Card.usecase';
+import { useMobile } from '@/app/components/hooks';
+import ContactsCarousel from '@/app/pages/Contacts/components/ContactsCarousel';
 const Contacts: FC<Props> = ({className, ...props}) => {
+
+  const mobile = useMobile();
+
   return (
       <PageLayout title='Контакты' className={className} {...props}>
-        <div className='flex w-full justify-center items-center gap-[5%]'>
+        {mobile && <ContactsCarousel />}
+        {!mobile && <div className='flex w-full justify-center items-center gap-[5%]'>
           <Card
               className='flex flex-col justify-end gap-2 h-full items-center pb-8 aspect-[5/6] max-w-[35rem] bg-background_director bg-cover relative
           after:absolute after:w-full after:bottom-0 after:rounded-lg
@@ -19,7 +25,7 @@ const Contacts: FC<Props> = ({className, ...props}) => {
           <Card className='p-16 pe-32 aspect-square max-w-[39rem]'>
             {textCard_usecase}
           </Card>
-        </div>
+        </div>}
       </PageLayout>
   );
 };

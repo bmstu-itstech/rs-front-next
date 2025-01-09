@@ -1,10 +1,11 @@
 "use client";
 import {memo, useEffect, useState} from "react";
-import Logo from "../icons/Logo";
-import { useMobile } from "../hooks";
-import { Bold } from "../shared";
+import Logo from "../../icons/Logo";
+import { useMobile } from "../../hooks";
+import { Bold } from "../../shared";
 import { motion, AnimatePresence } from "framer-motion";
-import { MenuItem } from "../features";
+import { MenuItem } from "../../features";
+import style from "./Navbar.module.css";
 
 const Navbar = memo(() => {
 
@@ -104,9 +105,9 @@ const Navbar = memo(() => {
           <div className={`w-full md:px-20 ${isMobileDevice ? "h-[120px] py-5" : "h-[200px] py-5"} flex items-center justify-between`}>
               <div className="absolute inset-x-0 top-0 left-0 h-1 bg-gradient-to-t from-transparent to-black"></div>
               <div className="flex items-center gap-[40px]">
-                  <div className="flex items-center gap-[40px] mr-auto">
-                      {(!isMobileDevice && show) && addDesktopLogos()}
-                      {show && <Logo type="crm" />}
+                  <div className={`flex items-center gap-[40px] mr-auto ${style.logoContainer} ${show ? 'opacity-1' : 'opacity-0'}`}>
+                      {(!isMobileDevice) && addDesktopLogos()}
+                      <Logo type="crm" />
                   </div>
               </div>
               <div className="relative cursor-pointer">

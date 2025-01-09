@@ -1,0 +1,49 @@
+.contactOuter {
+  border: 3px solid var(--primary-color);
+  margin-left: 20px;
+  margin-top: 20px;
+  border: 3px solid var(--primary-color);
+  border-radius: 35px;
+  background: rgba(0,0,0,0.8);
+  width: min(550px, 80vw);
+  height: min(630px, 60vh);
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 30px;
+}
+
+.contactInner {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  gap: 30px;
+}
+
+.contactBlock {
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contactList {
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width: 950px) {
+
+  .contactInner {
+      padding: 20px;
+      gap: 20px;
+  }
+
+  .contactBlock {
+      font-size: 18px;
+  }
+
+  .contactOuter {
+      margin-top: 0px;
+  }
+
+}
