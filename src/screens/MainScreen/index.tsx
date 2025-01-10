@@ -16,10 +16,13 @@ function MainScreen() {
                     технологий и творчества. Присоединяйтесь к нам и откройте для себя мир будущего уже сегодня!
                 </div>
                 <div class="bottom">
-                    <PrimaryButton onClick={() => window.scrollTo({
-                        top: window.innerHeight * 1.1,
-                        behavior: "smooth"
-                    })}>Подробнее</PrimaryButton>
+                    <PrimaryButton onClick={() => {
+                        const element = document.getElementById("news");
+                        element?.scrollIntoView({
+                            behavior: "smooth",
+                            block: "center"
+                        })
+                    }}>Подробнее</PrimaryButton>
                 </div>
             </div>
         </Container>

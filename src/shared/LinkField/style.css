@@ -19,7 +19,7 @@
 }
 
 .link-field .title {
-    font-size: 30px;
+    font-size: 3rem;
     text-align: left;
     text-transform: none;
 }
@@ -31,7 +31,7 @@
 @media (max-width: 950px) {
 
     .link-field .title {
-        font-size: 18px;
+        font-size: 1.8rem;
     }
 
 }

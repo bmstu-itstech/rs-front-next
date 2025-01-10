@@ -1,7 +1,6 @@
 import "./style.css";
 import { ComponentChildren } from "preact"
 import { memo, useEffect } from "preact/compat";
-import { isMobile } from "../../hooks";
 
 type Ids = "main"|"news"|"achievements"|"contacts";
 
@@ -18,19 +17,21 @@ function Container({
         const observer = new IntersectionObserver((entries, _) => {
             entries.forEach(entry => {
                 if (!entry.isIntersecting) return;
-                document.ontouchmove = (e) => e.preventDefault();
                 if (id === "main") {
-                    window.scrollTo({
-                        top: 0,
-                        behavior: "smooth"
-                    })
+                    requestAnimationFrame(() => {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: "smooth"
+                        });
+                    });
                 } else {
-                    element.scrollIntoView({
-                        behavior: "smooth",
-                        block: "center"
+                    requestAnimationFrame(() => {
+                        element.scrollIntoView({
+                            behavior: "smooth",
+                            block: "center"
+                        });
                     });
                 };
-                document.ontouchmove = undefined;
             });
         }, {
         });

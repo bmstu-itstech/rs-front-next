@@ -18,7 +18,7 @@
 
 .container-inner {
     margin-top: 15vh;
-    width: min(var(--max-container-width), 90vw);
+    width: min(var(--max-container-width), 95vw);
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -35,23 +35,23 @@
 
 .container-inner .main {
     display: grid;
-    max-width: min(1000px, 90vw);
+    max-width: min(1000px, 95vw);
     gap: 30px;
 }
 
 .title {
-    font-size: 90px;
+    font-size: 9rem;
     text-transform: uppercase;
 }
 
 .subtitle {
-    font-size: 82px;
+    font-size: 8.2rem;
     text-transform: uppercase;
     text-align: center;
 }
 
 .caption {
-    font-size: 30px;
+    font-size: 3rem;
 }
 
 .bottom {
@@ -61,18 +61,18 @@
 @media (max-width: 950px) {
 
     .title {
-        font-size: 40px;
+        font-size: 4rem;
         text-align: center;
         font-weight: 700;
     }
 
     .caption {
-        font-size: 18px;
+        font-size: 1.8rem;
         text-align: center;
     }
 
     .subtitle {
-        font-size: 40px;
+        font-size: 4rem;
         font-weight: 700;
     }
 

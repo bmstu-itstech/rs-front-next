@@ -20,7 +20,7 @@
 }
 
 .contact-card-inner .block {
-    font-size: 30px;
+    font-size: 3rem;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -39,7 +39,7 @@
     }
 
     .contact-card-inner .block {
-        font-size: 18px;
+        font-size: 1.8rem;
     }
 
     .contact-card-outer {

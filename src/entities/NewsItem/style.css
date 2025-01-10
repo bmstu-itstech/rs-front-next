@@ -16,7 +16,7 @@
 }
 
 .news-item.compact .title {
-    font-size: 36px;
+    font-size: 3.6rem;
     margin: 20px;
     margin-top: auto;
 }
@@ -52,11 +52,11 @@
 }
 
 .news-item .info .description {
-    font-size: 18px;
+    font-size: 1.8rem;
 }
 
 .news-item .action .label {
-    font-size: 16px;
+    font-size: 1.6rem;
 }
 
 .news-item .info div,img {
@@ -74,5 +74,5 @@
 .news-item .title-inner {
     text-align: center;
     text-transform: uppercase;
-    font-size: 25px;
+    font-size: 2.5rem;
 }

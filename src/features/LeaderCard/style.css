@@ -17,19 +17,19 @@
 
 .leader-card .title {
     margin-top: auto;
-    font-size: 35px;
+    font-size: 3.5rem;
     text-transform: none;
 }
 
 .leader-card .subtitle {
-    font-size: 30px;
+    font-size: 3rem;
     font-weight: 700;
     text-transform: none;
     margin-top: 5px;
 }
 
 .leader-card .desc {
-    font-size: 26px;
+    font-size: 2.6rem;
     margin-top: 5px;
 }
 
