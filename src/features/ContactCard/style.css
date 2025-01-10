@@ -5,7 +5,7 @@
     border: 3px solid var(--primary-color);
     border-radius: 35px;
     background: rgba(0,0,0,0.8);
-    width: min(550px, 80vw);
+    width: min(550px, 90vw);
     height: min(630px, 60vh);
     display: flex;
     flex-direction: column;
@@ -44,6 +44,7 @@
 
     .contact-card-outer {
         margin-top: 0px;
+        margin-right: 10px;
     }
 
 }

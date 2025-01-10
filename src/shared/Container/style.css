@@ -5,6 +5,7 @@
     scroll-snap-align: start;
     user-select: none;
     scroll-snap-align: start;
+    overflow-anchor: none;
 }
 
 @media (min-width: 950px) {
