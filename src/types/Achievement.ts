@@ -1,7 +1,11 @@
-export interface IAchievement {
+export interface AchievementInputModel {
     title: string;
     description: string;
     coverUrl: string;
-    photos: string[];
+    photoUrl: string;
     mediaUrl: string;
+};
+
+export interface IAchievement extends AchievementInputModel {
+    id: string;
 };

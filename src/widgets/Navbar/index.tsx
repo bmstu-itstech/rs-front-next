@@ -18,7 +18,7 @@ function Navbar() {
                 <div class="logo-outer" style={{ opacity }}>
                     <LogoList />
                 </div>
-                <Menu />
+                {/*<Menu />*/}
             </div>
         </div>
     );

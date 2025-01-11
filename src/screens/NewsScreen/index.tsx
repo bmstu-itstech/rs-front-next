@@ -1,12 +1,84 @@
 import "./style.css";
 import { memo, useEffect, useState } from "preact/compat";
 import { Container } from "../../shared";
-import { Carousel, NewsList } from "../../features";
+import { Carousel } from "../../features";
 
 function computeCount() {
     const width = window.innerWidth * 0.9;
     return Math.max(1, Math.min(Math.floor(width / 500), 3));
 };
+
+const news = [
+    {
+        id: "1",
+        title: "Мы на битве роботов!",
+        description: `28 сентября команда «Гурманы» выступила
+        на международном чемпионате «Битва Роботов» в Москве. Робот
+        «Madcheese», собранный на базе Центра молодёжной робототехники,
+        показал достойные результаты`,
+        coverUrl: "/mock/news_1.png",
+        caption: "Узнать подробности",
+        actionLink: "https://vk.com/wall-221273536_384",
+        isDraft: false
+    },
+    {
+        id: "2",
+        title: "Бауманцы покоряют «Кубок РТК»",
+        description: `В соревнованиях «Кубок РТК: Высшая лига» приняли
+        участие 4 команды от Центра, одна из них заняла 2 место и
+        теперь отправится на финал соревнований, который пройдёт в Сочи`,
+        coverUrl: "/mock/news_2.png",
+        caption: "Узнать подробности",
+        actionLink: "https://vk.com/wall-214718314_349",
+        isDraft: false
+    },
+    {
+        id: "3",
+        title: "Вперёд к победе на «Роснефти»!",
+        description: `Команда «Временное решение» прошла в финал
+        соревнований Хакатон программистов-робототехников «Роснефти».
+        Они создали уникального робота, способного двигаться по вертикальным
+        поверхностям!`,
+        coverUrl: "/mock/news_3.png",
+        caption: "Узнать подробности",
+        actionLink: "https://vk.com/wall-214718314_70",
+        isDraft: false
+    },
+    {
+        id: "4",
+        title: "Соревнования «Евробот»",
+        description: `Команда «Айсберг» успешно выступила в Нижнем Новгороде.
+        Они провели несколько дней, отлаживая робота, и в итоге набрали 42
+        балла, заняв почётное место и получив номинацию «Командный дух»`,
+        coverUrl: "/mock/news_4.png",
+        caption: "Узнать подробности",
+        actionLink: "https://vk.com/wall-214718314_353",
+        isDraft: false
+    },
+    {
+        id: "5",
+        title: "Турнир «Битва роботов»",
+        description: `Студенты продемонстрировали свои навыки, создав
+        уникальных роботов, которые сражались в различных дисциплинах.
+        Победителем стала команда «А что если?», которая поразила всех своим
+        мастерством`,
+        coverUrl: "/mock/news_5.png",
+        caption: "Узнать подробности",
+        actionLink: "https://vk.com/wall-214718314_366",
+        isDraft: false
+    },
+    {
+        id: "6",
+        title: "Всероссийский форум «Архипелаг»",
+        description: `Бауманцы поучаствовали в гонках на техническом
+        симуляторе, а затем продемонстрировали свои навыки в реальных полётах
+        в классе 200, несмотря на сложные погодные условия — дождь и туман.`,
+        coverUrl: "/mock/news_6.jpg",
+        caption: "Узнать подробности",
+        actionLink: "https://vk.com/wall-214718314_371",
+        isDraft: false
+    }
+]
 
 function NewsScreen() {
 
@@ -21,57 +93,7 @@ function NewsScreen() {
             <div class="news">
                 <div class="subtitle">Новости</div>
                 <div class="news-carousel-container">
-                    <Carousel itemsPerSlide={itemsCount} items={[
-                        {
-                            title: "День программиста",
-                            description: "День программиста – настоящая точка притяжения программистов и топовых российских IT-компаний. В течения дня бауманцы смогут узнать всю самую интересную информацию об актуальных профессиях в сфере IT.",
-                            actionLabel: "Узнать подробности о мероприятии",
-                            actionUrl: "https://vk.com",
-                            coverUrl: "/mock/3.jpg"
-                        },
-                        {
-                            title: "Транспорт будущего",
-                            description: "Активисты Центра молодежной робототехники посетили Центр «Транспорт будущего», расположенный в Белгородской области.",
-                            actionLabel: "Узнать подробности посещения центра",
-                            actionUrl: "https://vk.com",
-                            coverUrl: "/mock/1.jpg"
-                        },
-                        {
-                            title: "Регистрация на Инженерный вызов 2023",
-                            description: "Регистрация на Хардатон продлится до 6 октября. Не упусти свою возможность не только прокачать знания в области БПЛА, но и сразиться с лучшими командами со всей России",
-                            actionLabel: "Узнать подробности и зарегистрироваться",
-                            actionUrl: "https://vk.com",
-                            coverUrl: "/mock/2.jpg"
-                        },
-                        {
-                            title: "Тимоша",
-                            description: "Тимоша ашомиТ Тимоша ашомиТ Тимоша ашомиТ Тимоша ашомиТ Тимоша ашомиТ",
-                            actionLabel: "Чекнуть кота",
-                            actionUrl: "https://vk.com",
-                            coverUrl: "/mock/cat1.jpg"
-                        },
-                        {
-                            title: "Ещё Тимошка",
-                            description: "Тимоша ашомиТ Тимоша ашомиТ Тимоша ашомиТ Тимоша ашомиТ Тимоша ашомиТ",
-                            actionLabel: "Иван любит Тимошу",
-                            actionUrl: "https://vk.com",
-                            coverUrl: "/mock/cat2.jpg"
-                        },
-                        {
-                            title: "Тимошечка",
-                            description: "Тимоша ашомиТ Тимоша ашомиТ Тимоша ашомиТ Тимоша ашомиТ Тимоша ашомиТ",
-                            actionLabel: "Подписаться на Тимошу в ВК",
-                            actionUrl: "https://vk.com",
-                            coverUrl: "/mock/cat3.jpg"
-                        },
-                        {
-                            title: "Тимошуня",
-                            description: "Тимоша ашомиТ Тимоша ашомиТ Тимоша ашомиТ Тимоша ашомиТ Тимоша ашомиТ",
-                            actionLabel: "Увидеть Тимошу Тимошевича",
-                            actionUrl: "https://vk.com",
-                            coverUrl: "/mock/cat4.jpg"
-                        },
-                    ]} />
+                    <Carousel itemsPerSlide={itemsCount} items={news} />
                 </div>
             </div>
         </Container>

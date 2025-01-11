@@ -7,9 +7,9 @@ import type { INewsItem } from "../../types";
 function NewsItem({
     title,
     description,
-    actionLabel,
-    actionUrl,
-    coverUrl
+    actionLink,
+    coverUrl,
+    caption
 }: INewsItem) {
 
     const mobile = isMobile();
@@ -19,7 +19,7 @@ function NewsItem({
             <div
                 class="news-item compact"
                 style={{ backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0) 20vh, rgba(193, 48, 0, 0.5)), url(${coverUrl})` }}
-                onClick={() => window.location.href = actionUrl}  
+                onClick={() => window.location.href = actionLink}  
             >
                 <div class="title">
                     {title}
@@ -42,8 +42,8 @@ function NewsItem({
                 <div class="description">
                     {description}
                 </div>
-                <div class="action" onClick={() => window.location.href = actionUrl}>
-                    <div class="label">{actionLabel}</div>
+                <div class="action" onClick={() => window.location.href = actionLink}>
+                    <div class="label">{caption}</div>
                     <div class="button">
                         <ArrowButton
                         />

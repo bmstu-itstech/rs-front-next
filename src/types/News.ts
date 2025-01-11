@@ -1,7 +1,12 @@
-export interface INewsItem {
+export interface NewsInputModel {
     title: string;
     description: string;
-    actionLabel: string;
-    actionUrl: string;
+    caption: string;
+    actionLink: string;
     coverUrl: string;
+    isDraft: boolean;
+};
+
+export interface INews extends NewsInputModel {
+    id: string;
 };
