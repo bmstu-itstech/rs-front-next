@@ -1,6 +1,6 @@
 import "./style.css";
 import { memo, useEffect, useState } from "preact/compat";
-import { LogoList, Menu } from "../../features";
+import { LogoList } from "../../features";
 
 function Navbar() {
 

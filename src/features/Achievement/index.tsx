@@ -5,7 +5,6 @@ import { isMobile } from "../../hooks";
 import LinkField from "../../shared/LinkField";
 
 function Achievement({
-  id,
   title,
   description,
   coverUrl,

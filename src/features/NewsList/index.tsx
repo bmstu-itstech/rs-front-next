@@ -1,12 +1,12 @@
 import "./style.css";
 import { memo } from "preact/compat";
 import { NewsItem } from "../../entities";
-import type { INewsItem } from "../../types";
+import type { INews } from "../../types";
 
 function NewsList({
     items
 }: {
-    items: INewsItem[]
+    items: INews[]
 }) {
 
     return (

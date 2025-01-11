@@ -1,7 +1,7 @@
 import "./style.css";
 import { useState, useCallback, useEffect, useMemo } from 'preact/hooks';
 import useEmblaCarousel from 'embla-carousel-react';
-import { INewsItem } from '../../types';
+import { INews } from '../../types';
 import { NewsItem } from '../../entities';
 import { memo } from "preact/compat";
 
@@ -18,12 +18,10 @@ function createGroup<T>(arr: T[], count: number): T[][] {
   }
 
 const Carousel = ({ items, itemsPerSlide = 3 }: {
-    items: INewsItem[],
+    items: INews[],
     itemsPerSlide: number;
 }) => {
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'center' });
-    const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
-    const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
     const [selectedIndex, setSelectedIndex] = useState(0);
 
     // Group slides using createGroup and useMemo
@@ -35,8 +33,6 @@ const Carousel = ({ items, itemsPerSlide = 3 }: {
     const handleSelect = useCallback(() => {
         if (!emblaApi) return;
         setSelectedIndex(emblaApi.selectedScrollSnap());
-        setPrevBtnEnabled(emblaApi.canScrollPrev());
-        setNextBtnEnabled(emblaApi.canScrollNext());
     }, [emblaApi]);
 
 

@@ -2,7 +2,7 @@ import "./style.css";
 import { memo } from "preact/compat";
 import { isMobile } from "../../hooks";
 import { ArrowButton } from "../../shared";
-import type { INewsItem } from "../../types";
+import type { INews } from "../../types";
 
 function NewsItem({
     title,
@@ -10,7 +10,7 @@ function NewsItem({
     actionLink,
     coverUrl,
     caption
-}: INewsItem) {
+}: INews) {
 
     const mobile = isMobile();
 

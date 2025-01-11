@@ -1,1 +1,1 @@
-export type { INewsItem } from "./News";
+export type { INews } from "./News";
