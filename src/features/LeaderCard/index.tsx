@@ -5,10 +5,10 @@ function LeaderCard() {
 
     return (
         <div class="leader-card">
-            <div class="title">Бизиков Валерий</div>
+            <div class="title">Балакало Максим</div>
             <div class="subtitle">Руководитель ЦМР</div>
-            <div class="desc">+7 (999) 999-99-99</div>
-            <div class="desc">bizikov@mail.ru</div>
+            <div class="desc">+7 (906) 568-96-73</div>
+            <div class="desc">maks.balakalo@bmstu.ru</div>
         </div>
     );
 

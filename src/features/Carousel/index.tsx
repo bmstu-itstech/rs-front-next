@@ -23,8 +23,7 @@ const Carousel = ({ items, itemsPerSlide = 3 }: {
 }) => {
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'center' });
     const [selectedIndex, setSelectedIndex] = useState(0);
-
-    // Group slides using createGroup and useMemo
+    
     const groupedSlides = useMemo(() => {
         return createGroup(items, itemsPerSlide);
     }, [items, itemsPerSlide]);

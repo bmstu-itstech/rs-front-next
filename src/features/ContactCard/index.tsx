@@ -21,13 +21,13 @@ function ContactCard() {
                 <div class="block">
                     <LinkField
                         title="Политика перс. данных"
-                        url="https://google.com"
+                        url="https://bmstu.ru/about/obrabotka-dannyh"
                     />
                 </div>
                 <div class="block">
                     <LinkField
                         title="Сайт университета"
-                        url="https://google.com"
+                        url="https://bmstu.ru/"
                     />
                 </div>
                 <div class="block">
@@ -35,13 +35,12 @@ function ContactCard() {
                         title="Адрес"
                         value={<LinkField
                             title="Схема проезда"
-                            url="https://google.com"      
+                            url="https://yandex.ru/maps/213/moscow/?ll=37.682269%2C55.765475&mode=poi&poi%5Bpoint%5D=37.680720%2C55.765206&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D128334697512&utm_source=share&z=17"      
                         />}
                     />
                 </div>
                 <div class="block">
-                    105005, г. Москва,
-                    2-ая Бауманская, д. 5, стр. 1
+                    105005, г. Москва, Бауманская ул., 57Б, стр. 1
                 </div>
                 <div class="block">
                     <Field
@@ -52,11 +51,11 @@ function ContactCard() {
                 <div class="list">
                     <LinkField
                         title="ВКонтакте"
-                        url="https://vk.com"
+                        url="https://vk.com/robotics_bmstu"
                     />
                     <LinkField
                         title="Телеграм"
-                        url="https://telegram.org"
+                        url="https://t.me/robotics_bmstu"
                     />
                 </div>
             </div>
