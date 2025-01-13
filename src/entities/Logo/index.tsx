@@ -1,4 +1,4 @@
-import { memo } from "preact/compat";
+import { memo, MouseEventHandler } from "preact/compat";
 
 function Logo({
     src,
@@ -7,7 +7,7 @@ function Logo({
 }: {
     src: string;
     alt: string;
-    onClick?: () => void;
+    onClick?: MouseEventHandler<HTMLImageElement>;
 }) {
 
     return (

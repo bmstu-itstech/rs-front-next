@@ -1,13 +1,13 @@
 import "./style.css";
 import { ComponentChildren } from "preact";
-import { memo } from "preact/compat";
+import { memo, MouseEventHandler } from "preact/compat";
 
 function PrimaryButton({
     children,
     onClick = () => {}
 }: {
     children?: ComponentChildren;
-    onClick?: () => void;
+    onClick?: MouseEventHandler<HTMLDivElement>;
 }) {
 
     return (

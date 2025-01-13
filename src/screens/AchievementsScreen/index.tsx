@@ -52,8 +52,8 @@ function AchievementsScreen() {
     const [active, setActive] = useState("1");
 
     const handleActive = useCallback((newId: string) => {
-        let originalIndex = achievements.findIndex(v => v.id === newId);
-        let activeIndex = achievements.findIndex(v => v.id === active);
+        const originalIndex = achievements.findIndex(v => v.id === newId);
+        const activeIndex = achievements.findIndex(v => v.id === active);
         [achievements[originalIndex], achievements[activeIndex]] = [achievements[activeIndex], achievements[originalIndex]];
         setActive(newId);
     }, [mobile, active]);

@@ -1,12 +1,12 @@
 import "./style.css";
-import { memo } from "preact/compat";
+import { memo, MouseEventHandler } from "preact/compat";
 
 function ArrowButton({
     direction = "right",
     onClick = () => {}
 }: {
     direction?: "right"|"left";
-    onClick?: () => void;
+    onClick?: MouseEventHandler<HTMLDivElement>;
 }) {
 
     return (
