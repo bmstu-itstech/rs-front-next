@@ -10,12 +10,8 @@ function ContactCard() {
             <div class="contact-card-inner">
                 <div class="block">
                     <Field
-                        title="Телефон"
-                        value="+7 (800) 555-35-35"
-                    />
-                    <Field
                         title="Email"
-                        value="cmr@bmstu.ru"
+                        value="robotics.bmstu@yandex.ru"
                     />
                 </div>
                 <div class="block">
