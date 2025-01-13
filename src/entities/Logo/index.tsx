@@ -1,14 +1,12 @@
 import { memo, MouseEventHandler } from "preact/compat";
 
-function Logo({
-    src,
-    alt,
-    onClick
-}: {
+interface LogoProps {
     src: string;
     alt: string;
     onClick?: MouseEventHandler<HTMLImageElement>;
-}) {
+};
+
+const Logo: React.FC<LogoProps> = ({ src, alt, onClick }) => {
 
     return (
         <img
@@ -20,5 +18,7 @@ function Logo({
     );
 
 };
+
+Logo.displayName = "Logo";
 
 export default memo(Logo);

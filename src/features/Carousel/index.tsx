@@ -15,12 +15,14 @@ function createGroup<T>(arr: T[], count: number): T[][] {
       result.push(arr.slice(i, i + count));
     }
     return result;
-  }
+};
 
-const Carousel = ({ items, itemsPerSlide = 3 }: {
+interface CarouselProps {
     items: INews[],
     itemsPerSlide: number;
-}) => {
+};
+
+const Carousel: React.FC<CarouselProps> = ({ items, itemsPerSlide = 3 }) => {
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'center' });
     const [selectedIndex, setSelectedIndex] = useState(0);
     
@@ -81,5 +83,7 @@ const Carousel = ({ items, itemsPerSlide = 3 }: {
         </div>
     );
 };
+
+Carousel.displayName = "Carousel";
 
 export default memo(Carousel);

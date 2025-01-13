@@ -6,7 +6,7 @@ import ContactCard from "../../features/ContactCard";
 import { isMobile } from "../../hooks";
 import ContactsCarousel from "../../features/ContactsCarousel";
 
-function ContactsScreen() {
+const ContactsScreen: React.FC<{}> = () => {
 
     const mobile = isMobile();
 
@@ -24,5 +24,7 @@ function ContactsScreen() {
     )
 
 };
+
+ContactsScreen.displayName = "ContactsScreen";
 
 export default memo(ContactsScreen);

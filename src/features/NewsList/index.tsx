@@ -3,11 +3,13 @@ import { memo } from "preact/compat";
 import { NewsItem } from "../../entities";
 import type { INews } from "../../types";
 
-function NewsList({
-    items
-}: {
+interface NewsListProps {
     items: INews[]
-}) {
+};
+
+const NewsList: React.FC<NewsListProps> = ({
+    items
+}) => {
 
     return (
         <div class="news-list">
@@ -16,5 +18,7 @@ function NewsList({
     );
 
 };
+
+NewsList.displayName = "NewsList";
 
 export default memo(NewsList);

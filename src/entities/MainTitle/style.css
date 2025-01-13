@@ -1,0 +1,16 @@
+.main-title {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.main-title .content {
+  text-transform: uppercase;
+  font-size: 75px;
+  font-weight: 500;
+}
+
+.main-title .delimiter {
+  height: 6px;
+  width: max-content;
+}

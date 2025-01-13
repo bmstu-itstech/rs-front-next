@@ -4,7 +4,7 @@ import LeaderCard from "../LeaderCard";
 import ContactCard from "../ContactCard";
 import { memo } from 'preact/compat';
 
-const ContactsCarousel = () => {
+const ContactsCarousel: React.FC<{}> = () => {
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'center' });
     const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -62,6 +62,8 @@ const ContactsCarousel = () => {
         </div>
     );
 };
+
+ContactsCarousel.displayName = "ContactsCarousel";
 
 export default memo(ContactsCarousel);
 

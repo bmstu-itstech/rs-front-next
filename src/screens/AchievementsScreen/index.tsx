@@ -46,7 +46,7 @@ const achievements: IAchievement[] = [
     }
 ];
 
-function AchievementsScreen() {
+const AchievementsScreen: React.FC<{}> = () => {
 
     const mobile = isMobile();
     const [active, setActive] = useState("1");
@@ -76,5 +76,7 @@ function AchievementsScreen() {
     );
 
 };
+
+AchievementsScreen.displayName = "AchievementsScreen";
 
 export default memo(AchievementsScreen);

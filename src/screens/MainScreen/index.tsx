@@ -1,7 +1,7 @@
 import { memo } from "preact/compat";
 import { Container, PrimaryButton } from "../../shared";
 
-function MainScreen() {
+const MainScreen: React.FC<{}> = () => {
     
     return (
         <Container id="main">
@@ -29,5 +29,7 @@ function MainScreen() {
     );
 
 };
+
+MainScreen.displayName = "MainScreen";
 
 export default memo(MainScreen);

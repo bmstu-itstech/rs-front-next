@@ -2,7 +2,7 @@ import "./style.css";
 import { memo } from "preact/compat";
 import { useState } from "preact/hooks";
 
-function Menu() {
+const Menu: React.FC<{}> = () => {
 
     const [isOpened, setIsOpened] = useState<boolean>(false);
 

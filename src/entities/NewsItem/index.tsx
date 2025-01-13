@@ -4,13 +4,13 @@ import { isMobile } from "../../hooks";
 import { ArrowButton } from "../../shared";
 import type { INews } from "../../types";
 
-function NewsItem({
+const NewsItem: React.FC<INews> = ({
     title,
     description,
     actionLink,
     coverUrl,
     caption
-}: INews) {
+}) => {
 
     const mobile = isMobile();
 
@@ -54,5 +54,7 @@ function NewsItem({
     )
 
 };
+
+NewsItem.displayName = "NewsItem";
 
 export default memo(NewsItem);

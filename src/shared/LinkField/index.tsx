@@ -1,13 +1,15 @@
 import "./style.css";
 import { memo } from "preact/compat";
 
-function LinkField({
-    title,
-    url
-}: {
+interface LinkFieldProps {
     title: string;
     url: string;
-}) {
+};
+
+const LinkField: React.FC<LinkFieldProps> = ({
+    title,
+    url
+}) => {
 
     return (
         <div
@@ -22,5 +24,7 @@ function LinkField({
     );
 
 };
+
+LinkField.displayName = "LinkField";
 
 export default memo(LinkField);

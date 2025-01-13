@@ -27,7 +27,7 @@ const contactData: ContactData = {
     },
 };
 
-const ContactCard = () => {
+const ContactCard: React.FC<{}> = () => {
     return (
         <div class="contact-card-outer">
             <div class="contact-card-inner">
@@ -81,5 +81,7 @@ const ContactCard = () => {
         </div>
     );
 };
+
+ContactCard.displayName = "ContactCard";
 
 export default memo(ContactCard);

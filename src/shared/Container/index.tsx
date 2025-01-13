@@ -5,13 +5,15 @@ import { isMobile } from "../../hooks";
 
 type Ids = "main"|"news"|"achievements"|"contacts";
 
-function Container({
-    id,
-    children
-}: {
+interface ContainerProps {
     id: Ids;
     children?: ComponentChildren;
-}) {
+};
+
+const Container: React.FC<ContainerProps> = ({
+    id,
+    children
+}) => {
 
     const mobile = isMobile();
 
@@ -54,5 +56,7 @@ function Container({
     );
 
 };
+
+Container.displayName = "Container";
 
 export default memo(Container);

@@ -1,13 +1,15 @@
 import "./style.css";
 import { memo, MouseEventHandler } from "preact/compat";
 
-function ArrowButton({
-    direction = "right",
-    onClick = () => {}
-}: {
+interface ArrowButtonProps {
     direction?: "right"|"left";
     onClick?: MouseEventHandler<HTMLDivElement>;
-}) {
+};
+
+const ArrowButton: React.FC<ArrowButtonProps> = ({
+    direction = "right",
+    onClick = () => {}
+}) => {
 
     return (
         <div
@@ -19,5 +21,7 @@ function ArrowButton({
     );
 
 };
+
+ArrowButton.displayName = "ArrowButton";
 
 export default memo(ArrowButton);

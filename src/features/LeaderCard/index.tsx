@@ -1,7 +1,7 @@
 import "./style.css";
 import { memo } from "preact/compat";
 
-function LeaderCard() {
+const LeaderCard: React.FC<{}> = () => {
 
     return (
         <div class="leader-card">
@@ -13,5 +13,7 @@ function LeaderCard() {
     );
 
 };
+
+LeaderCard.displayName = "LeaderCard";
 
 export default memo(LeaderCard);

@@ -1,7 +1,7 @@
 import "./style.css";
 import { memo } from "preact/compat"
 
-function Footer() {
+const Footer: React.FC<{}> = () => {
 
     return (
         <div class="footer-outer">
@@ -12,5 +12,7 @@ function Footer() {
     )
 
 };
+
+Footer.displayName = "Footer";
 
 export default memo(Footer);

@@ -3,7 +3,7 @@ import { useLocation } from "preact-iso";
 import { Logo } from "../../entities";
 import { memo } from "preact/compat";
 
-function LogoList() {
+const LogoList: React.FC<{}> = () => {
 
     const location = useLocation();
 
@@ -28,5 +28,7 @@ function LogoList() {
     );
 
 };
+
+LogoList.displayName = "LogoList";
 
 export default memo(LogoList);

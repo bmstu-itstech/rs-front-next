@@ -80,7 +80,7 @@ const news = [
     }
 ]
 
-function NewsScreen() {
+const NewsScreen: React.FC<{}> = () => {
 
     const [itemsCount, setItemsCount] = useState(computeCount);
 
@@ -100,5 +100,7 @@ function NewsScreen() {
     );
 
 };
+
+NewsScreen.displayName = "NewsScreen";
 
 export default memo(NewsScreen);

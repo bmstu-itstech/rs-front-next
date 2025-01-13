@@ -2,7 +2,7 @@ import "./style.css";
 import { memo, useEffect, useState } from "preact/compat";
 import { LogoList } from "../../features";
 
-function Navbar() {
+const Navbar: React.FC<{}> = () => {
 
     const [opacity, setOpacity] = useState("1");
 
@@ -24,5 +24,7 @@ function Navbar() {
     );
 
 };
+
+Navbar.displayName = "Navbar";
 
 export default memo(Navbar);

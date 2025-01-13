@@ -4,15 +4,7 @@ import { useState } from "preact/hooks";
 import { isMobile } from "../../hooks";
 import LinkField from "../../shared/LinkField";
 
-function Achievement({
-  title,
-  description,
-  coverUrl,
-  photoUrl,
-  mediaUrl,
-  compact = false,
-  onClick
-}: {
+interface AchievementProps {
   id: string;
   title: string;
   description: string;
@@ -21,7 +13,17 @@ function Achievement({
   coverUrl: string;
   compact?: boolean;
   onClick?: MouseEventHandler<HTMLDivElement>;
-}) {
+};
+
+const Achievement: React.FC<AchievementProps> = ({
+  title,
+  description,
+  coverUrl,
+  photoUrl,
+  mediaUrl,
+  compact = false,
+  onClick
+}) => {
 
   const [hovered, setHovered] = useState<boolean>(false);
   const mobile = isMobile();
@@ -88,5 +90,7 @@ function Achievement({
   );
 
 };
+
+Achievement.displayName = "Achievement";
 
 export default memo(Achievement);
