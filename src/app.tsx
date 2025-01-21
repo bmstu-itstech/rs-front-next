@@ -1,7 +1,7 @@
 import { ErrorBoundary, LocationProvider, Route, Router } from 'preact-iso'
 import './app.css';
 import { Footer, Navbar } from './widgets'
-import { Home } from './pages'
+import { Events, Home } from './pages'
 
 export function App() {
 
@@ -11,7 +11,8 @@ export function App() {
         <Navbar />
         <Router>
           {[
-            <Route path="/" component={Home} />
+            <Route path="/" component={Home} />,
+            <Route path="/events" component={Events} />
           ]}
         </Router>
         <Footer />

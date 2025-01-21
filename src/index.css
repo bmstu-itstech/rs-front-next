@@ -37,3 +37,7 @@ body {
   background-position: center center;
 }
 
+body:has(.events-screen) {
+  background-image: url("/mock/events.png");
+  backdrop-filter: brightness(20%);
+}

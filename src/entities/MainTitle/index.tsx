@@ -1,3 +1,4 @@
+import "./style.css";
 import { memo } from "preact/compat";
 import { isMobile } from "../../hooks";
 

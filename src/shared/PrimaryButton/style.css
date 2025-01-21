@@ -6,6 +6,7 @@
     width: fit-content;
     cursor: pointer;
     transition: background .3s;
+    user-select: none;
 }
 
 .primary-button:hover {
