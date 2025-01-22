@@ -4,6 +4,7 @@ import NewsList from "./NewsList";
 import Carousel from "./Carousel";
 import LeaderCard from "./LeaderCard";
 import Achievement from "./Achievement";
+import EventsCarousel from "./EventsCarousel";
 
 export {
     LogoList,
@@ -11,5 +12,6 @@ export {
     NewsList,
     Carousel,
     LeaderCard,
-    Achievement
+    Achievement,
+    EventsCarousel
 };

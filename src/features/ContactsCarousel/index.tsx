@@ -53,10 +53,13 @@ const ContactsCarousel: React.FC<{}> = () => {
             </div>
             <div className="carousel__dots">
                 {emblaApi?.scrollSnapList().map((_,index) => {
-                    return <button className={`carousel__dot ${selectedIndex === index? 'carousel__dot--selected': ''}`}
-                                   key={index}
-                                   onClick={() => scrollToIndex(index)}
-                    />
+                    return (
+                        <button
+                            className={`carousel__dot ${selectedIndex === index? 'carousel__dot--selected': ''}`}
+                            key={index}
+                            onClick={() => scrollToIndex(index)}
+                        />
+                    )
                 })}
             </div>
         </div>
