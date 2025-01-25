@@ -10,10 +10,8 @@ export function App() {
       <ErrorBoundary>
         <Navbar />
         <Router>
-          {[
-            <Route path="/" component={Home} />,
-            <Route path="/events" component={Events} />
-          ]}
+          <Route path="/" component={Home} />
+          <Route path="/events" component={Events} />
         </Router>
         <Footer />
       </ErrorBoundary>
