@@ -24,7 +24,7 @@
     "framer-motion": "^11.14.3",
     "jsonwebtoken": "^9.0.2",
     "mobx": "^6.13.5",
-    "mongoose": "^8.9.3",
+    "mongoose": "^8.9.5",
     "next": "15.0.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
