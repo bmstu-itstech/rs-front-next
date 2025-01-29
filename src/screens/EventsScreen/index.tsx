@@ -11,11 +11,11 @@ const data: IEvent[] = [
       Подробное описание того, что за мероприятие,
       зачем оно нужно и почему оно важно
     `,
-    photos: [],
-    mentions: [],
-    docs: [],
+    photos: "",
+    mentions: "",
+    docs: "",
     date: "20.01.2025",
-    place: "ЦМР"
+    place: "https://maps.yandex.ru"
   },
   {
     id: "2",
@@ -24,11 +24,11 @@ const data: IEvent[] = [
       Подробное описание того, что за мероприятие,
       зачем оно нужно и почему оно важно
     `,
-    photos: [],
-    mentions: [],
-    docs: [],
+    photos: "",
+    mentions: "",
+    docs: "",
     date: "20.01.2025",
-    place: "ЦМР"
+    place: "https://maps.yandex.ru"
   },
 ];
 

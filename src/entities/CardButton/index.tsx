@@ -1,3 +1,4 @@
+import "./style.css";
 import { memo, MouseEventHandler } from "preact/compat";
 
 interface CardButtonProps {

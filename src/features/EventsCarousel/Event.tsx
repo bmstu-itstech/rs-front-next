@@ -1,11 +1,14 @@
 import "./style.css";
-import { memo } from "preact/compat";
+import { createPortal, memo, useState } from "preact/compat";
 import MainTitle from "../../entities/MainTitle";
 import { PrimaryButton } from "../../shared";
 import LinkField from "../../shared/LinkField";
 import { IEvent } from "../../types";
+import EventDropdown from "../EventDropdown";
 
 function Event(item: IEvent) {
+
+  const [isOpened, setIsOpened] = useState<boolean>(false);
 
   return (
     <div class="event">
@@ -17,9 +20,13 @@ function Event(item: IEvent) {
         <div class="circle" />
         <LinkField title="Зарегистрироваться" url="" />
       </div>
-      <PrimaryButton onClick={() => {
-        console.log("clicked");
-      }}>Подробнее</PrimaryButton>
+      <PrimaryButton
+        onClick={() => setIsOpened(true)}
+      >Подробнее</PrimaryButton>
+      {isOpened && createPortal(<EventDropdown
+        onClose={() => setIsOpened(false)}
+        event={item}
+      />, document.getElementById("modal") as HTMLElement)}
     </div>
   );
 
