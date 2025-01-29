@@ -1,0 +1,19 @@
+.card-button {
+  background-color: white;
+  border-radius: 30px;
+  font-size: 2.7rem;
+  text-align: center;
+  height: 63px;
+  line-height: 63px;
+  max-width: min(522px, 90vw);
+}
+
+@media (max-width: 950px) {
+
+  .card-button {
+    height: 35px;
+    line-height: 35px;
+    font-size: 1.2rem;
+  }
+
+}
