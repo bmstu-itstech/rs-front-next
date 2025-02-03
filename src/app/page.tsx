@@ -1,8 +1,7 @@
-
-export default function Home() {
+export default function Page() {
   return (
     <div>
-
+    1234567fgtyghtyh
     </div>
   );
 }
