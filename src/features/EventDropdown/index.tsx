@@ -10,7 +10,6 @@ interface EventDropdownProps {
 }
 
 function EventDropdown({onClose, event}: EventDropdownProps) {
-
     return (
         <div className="event-dropdown-bg" onClick={onClose}>
             <div className="event-dropdown-outer" onClick={(e) => e.stopPropagation()}>
@@ -48,6 +47,6 @@ function EventDropdown({onClose, event}: EventDropdownProps) {
         </div>
     );
 
-};
+}
 
 export default EventDropdown;

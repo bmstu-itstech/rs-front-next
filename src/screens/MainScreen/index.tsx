@@ -1,3 +1,4 @@
+'use client'
 import { Container, PrimaryButton } from "@/shared";
 import {NextPage} from "next";
 
