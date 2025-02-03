@@ -22,8 +22,7 @@ const Container: React.FC<ContainerProps> = ({
         const observer = new IntersectionObserver((entries, _) => {
             entries.forEach(entry => {
                 if (!entry.isIntersecting) return;
-                const originalOverflow = document.documentElement.style.overflow;
-                if (mobile) document.documentElement.style.overflow = "hidden";
+                if (mobile) document.documentElement.style.overflowY = "hidden";
                 if (id === "main") {
                     requestAnimationFrame(() => {
                         window.scrollTo({
@@ -39,7 +38,7 @@ const Container: React.FC<ContainerProps> = ({
                         });
                     });
                 };
-                if (mobile) setTimeout(() => document.documentElement.style.overflow = originalOverflow, 700);
+                setTimeout(() => document.documentElement.style.overflowY = "scroll", 700);
             });
         }, {
         });
