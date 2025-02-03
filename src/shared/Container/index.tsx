@@ -2,21 +2,22 @@
 
 import "./style.css";
 import {ReactNode} from "react"
-import { memo, useEffect } from "react";
-import { useIsMobile } from "../../hooks";
+import {useEffect} from "react";
+import {useIsMobile} from "../../hooks";
 import {NextPage} from "next";
 
-type Ids = "main"|"news"|"achievements"|"contacts";
+type Ids = "main" | "news" | "achievements" | "contacts";
 
 interface ContainerProps {
     id: Ids;
     children?: ReactNode;
 }
 
-const Container: NextPage<ContainerProps> = ({
-    id,
-    children
-}) => {
+const Container: NextPage<ContainerProps> = (
+    {
+        id,
+        children
+    }) => {
 
     const mobile = useIsMobile();
 
@@ -43,8 +44,7 @@ const Container: NextPage<ContainerProps> = ({
                 }
                 setTimeout(() => document.documentElement.style.overflowY = "scroll", 700);
             });
-        }, {
-        });
+        }, {});
         observer.observe(element);
         return () => observer.disconnect();
     }, [id, mobile]);
@@ -61,4 +61,4 @@ const Container: NextPage<ContainerProps> = ({
 
 Container.displayName = "Container";
 
-export default memo(Container);
+export default Container;

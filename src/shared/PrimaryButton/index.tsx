@@ -1,3 +1,5 @@
+'use client'
+
 import "./style.css";
 import {MouseEventHandler} from "react";
 import {NextPage} from "next";

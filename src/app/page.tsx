@@ -1,7 +1,10 @@
-export default function Page() {
-  return (
-    <div>
-    1234567fgtyghtyh
-    </div>
-  );
-}
+import React, {FC} from 'react';
+import Home from "@/Pages1/Home";
+
+const Page: FC = () => {
+    return (
+        <Home/>
+    );
+};
+
+export default Page;

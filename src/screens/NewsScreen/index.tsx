@@ -7,10 +7,6 @@ import {Carousel} from "@/features";
 import {INews} from "@/types/News";
 import {NextPage} from "next";
 
-function computeCount() {
-    const width = window.innerWidth * 0.9;
-    return Math.max(1, Math.min(Math.floor(width / 500), 3));
-}
 
 const news: INews[] = [
     {
@@ -85,6 +81,11 @@ const news: INews[] = [
 ]
 
 const NewsScreen: NextPage = () => {
+    function computeCount() {
+        if (typeof window == 'undefined') return 400;
+        const width = window.innerWidth * 0.9;
+        return Math.max(1, Math.min(Math.floor(width / 500), 3));
+    }
 
     const [itemsCount, setItemsCount] = useState(computeCount);
 

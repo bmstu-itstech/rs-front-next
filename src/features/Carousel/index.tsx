@@ -16,12 +16,12 @@ function createGroup<T>(arr: T[], count: number): T[][] {
       result.push(arr.slice(i, i + count));
     }
     return result;
-};
+}
 
 interface CarouselProps {
     items: INews[],
     itemsPerSlide: number;
-};
+}
 
 const Carousel: FC<CarouselProps> = ({ items, itemsPerSlide = 3 }) => {
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'center' });
