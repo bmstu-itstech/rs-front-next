@@ -19,7 +19,7 @@ const ArrowButton: NextPage<ArrowButtonProps> = (
             className={`arrow-button ${direction}`}
             onClick={onClick}
         >
-            <Image src="/icons/arrow-right.svg" alt='' fill={true}/>
+            <Image src="/icons/arrow-right.svg" alt='' width={29} height={30}/>
         </div>
     );
 
