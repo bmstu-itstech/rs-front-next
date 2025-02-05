@@ -3,7 +3,7 @@
 import "./style.css";
 import {ReactNode} from "react"
 import {useEffect} from "react";
-import {useIsMobile} from "../../hooks";
+import {useIsMobile} from "@/hooks";
 import {NextPage} from "next";
 
 type Ids = "main" | "news" | "achievements" | "contacts";

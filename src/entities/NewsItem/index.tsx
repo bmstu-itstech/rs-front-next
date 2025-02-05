@@ -35,7 +35,7 @@ const NewsItem: FC<INews> = (
 
     return (
         <div className="news-item">
-            <Image className="cover" src={coverUrl} alt="cover" fill={true} />
+            <Image className="cover" src={coverUrl} alt="cover" width={500} height={500}/>
             <div className="title-outer">
                 <div className="title-inner">
                     {title}

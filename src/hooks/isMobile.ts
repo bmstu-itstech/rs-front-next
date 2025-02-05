@@ -1,12 +1,10 @@
-'use client'
-
-import { useEffect, useState } from "react";
+import {useEffect, useState} from "react";
 
 export default function useIsMobile() {
-    const [mobile, setMobile] = useState<boolean>(() => typeof window !== 'undefined' && window.innerWidth <= 950);
+    const [mobile, setMobile] = useState<boolean>(false);
 
     useEffect(() => {
-
+        setMobile(() => window.innerWidth <= 950)
         const onResize = () => {
             setMobile(window.innerWidth <= 950);
         };
@@ -15,7 +13,8 @@ export default function useIsMobile() {
 
         return () => window.removeEventListener("resize", onResize);
 
-    });
+    }, []);
 
     return mobile;
+
 };

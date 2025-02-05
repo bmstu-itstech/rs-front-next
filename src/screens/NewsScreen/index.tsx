@@ -81,15 +81,18 @@ const news: INews[] = [
 ]
 
 const NewsScreen: NextPage = () => {
-    function computeCount() {
-        if (typeof window == 'undefined') return 400;
-        const width = window.innerWidth * 0.9;
-        return Math.max(1, Math.min(Math.floor(width / 500), 3));
-    }
 
-    const [itemsCount, setItemsCount] = useState(computeCount);
+
+    const [itemsCount, setItemsCount] = useState<number>(1);
 
     useEffect(() => {
+
+        function computeCount() {
+            const width = window.innerWidth * 0.9;
+            return Math.max(1, Math.min(Math.floor(width / 500), 3));
+        }
+
+        setItemsCount(computeCount);
         window.onresize = () => setItemsCount(computeCount);
     }, []);
 
