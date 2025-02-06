@@ -37,6 +37,7 @@ const EventsScreen = () => {
         <div className="events-screen">
             <EventsCarousel items={data} itemsPerSlide={1} >
             </EventsCarousel>
+            <div id={'modal'}></div>
         </div>
     );
 }

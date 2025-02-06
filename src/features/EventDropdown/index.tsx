@@ -40,7 +40,7 @@ function EventDropdown({onClose, event}: EventDropdownProps) {
                         />
                     </div>
                     <div className="action">
-                        <Image src="/icons/close.svg" onClick={onClose} alt=""/>
+                        <Image src="/icons/close.svg" onClick={onClose} alt="" width={100} height={100} />
                     </div>
                 </div>
             </div>
