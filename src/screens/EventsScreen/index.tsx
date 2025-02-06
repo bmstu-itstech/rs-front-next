@@ -1,5 +1,6 @@
 import {EventsCarousel} from "@/features";
 import {IEvent} from "@/types";
+
 import "./style.css";
 
 const data: IEvent[] = [
@@ -34,7 +35,8 @@ const data: IEvent[] = [
 const EventsScreen = () => {
     return (
         <div className="events-screen">
-            <EventsCarousel items={data} itemsPerSlide={1}/>
+            <EventsCarousel items={data} itemsPerSlide={1} >
+            </EventsCarousel>
         </div>
     );
 }

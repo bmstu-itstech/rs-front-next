@@ -6,6 +6,7 @@ import {Container} from "@/shared";
 import {Carousel} from "@/features";
 import {INews} from "@/types/News";
 import {NextPage} from "next";
+// import {EventsCarousel} from "@/features";
 
 
 const news: INews[] = [
@@ -81,8 +82,6 @@ const news: INews[] = [
 ]
 
 const NewsScreen: NextPage = () => {
-
-
     const [itemsCount, setItemsCount] = useState<number>(1);
 
     useEffect(() => {
@@ -101,6 +100,7 @@ const NewsScreen: NextPage = () => {
             <div className="news">
                 <div className="subtitle">Новости</div>
                 <div className="news-carousel-container">
+                    {/*<EventsCarousel itemsPerSlide={itemsCount} items={news}/>*/}
                     <Carousel itemsPerSlide={itemsCount} items={news}/>
                 </div>
             </div>

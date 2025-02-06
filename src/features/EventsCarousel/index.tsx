@@ -2,17 +2,17 @@
 
 import {useState, useCallback, useEffect, useMemo, memo} from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
-import {IEvent} from '@/types';
+import {IEvent, INews} from '@/types';
 import Event from "./Event";
 import {ArrowButton} from '@/shared';
 import {useIsMobile} from '@/hooks';
 import {NextPage} from "next";
+import {NewsItem} from "@/entities";
 
 function createGroup<T>(arr: T[], count: number): T[][] {
     if (count <= 0) {
         throw new Error("Count must be a positive number.");
     }
-
     const result: T[][] = [];
     for (let i = 0; i < arr.length; i += count) {
         result.push(arr.slice(i, i + count));
@@ -21,7 +21,7 @@ function createGroup<T>(arr: T[], count: number): T[][] {
 }
 
 interface CarouselProps {
-    items: IEvent[],
+    items: IEvent[] | INews[],
     itemsPerSlide: number;
 }
 
@@ -44,11 +44,8 @@ const Carousel: NextPage<CarouselProps> = ({items, itemsPerSlide = 3}) => {
     useEffect(() => {
         if (!emblaApi) return;
         handleSelect();
-
         emblaApi.on('select', handleSelect);
         emblaApi.on('pointerUp', handleSelect);
-
-
         return () => {
             emblaApi.off('select', handleSelect);
             emblaApi.off('pointerUp', handleSelect);
@@ -61,7 +58,6 @@ const Carousel: NextPage<CarouselProps> = ({items, itemsPerSlide = 3}) => {
     }
 
     if (!items.length) return null;
-
     return (
         <div className="carousel events-carousel">
             <div className="embla" ref={emblaRef}>
@@ -69,22 +65,28 @@ const Carousel: NextPage<CarouselProps> = ({items, itemsPerSlide = 3}) => {
                     {groupedSlides.map((slideGroup, index) => (
                         <div className="embla__slide" key={index}>
                             <div className="embla__slide-container" style={{width: "75vw"}}>
-                                {slideGroup.map((slide) => (
-                                    <div className="event-container" key={slide.id}>
-                                        <Event {...slide} />
-                                    </div>
-                                ))}
+                                {"mentions" in slideGroup[0] ?
+                                    slideGroup.map((slide) => (
+                                        <div className="event-container" key={slide.id}>
+                                            <Event {...slide} />
+                                        </div>
+                                    ))
+                                    :
+                                    slideGroup.map((slide, idx) => <NewsItem {...slide} key={idx}/>)
+                                }
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
+
             <div className="events-button-left">
                 {!mobile && <ArrowButton direction="left" onClick={() => emblaApi?.scrollPrev()}/>}
             </div>
             <div className="events-button-right">
                 {!mobile && <ArrowButton direction="right" onClick={() => emblaApi?.scrollNext()}/>}
             </div>
+
             <div className="carousel__dots">
                 {emblaApi?.scrollSnapList().map((_, index) => {
                     return <button

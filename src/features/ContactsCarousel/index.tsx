@@ -1,3 +1,5 @@
+'use client'
+
 import { useState, useCallback, useEffect, memo } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import LeaderCard from "../LeaderCard";
