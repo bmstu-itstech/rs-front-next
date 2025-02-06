@@ -4,7 +4,8 @@ import "./style.css";
 import {useState, useCallback, useEffect, useMemo, memo, FC} from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { INews } from '@/types';
-import { NewsItem } from '../../entities';
+import { NewsItem } from '@/entities';
+// import {useIsMobile} from "@/hooks";
 
 function createGroup<T>(arr: T[], count: number): T[][] {
     if (count <= 0) {
@@ -26,7 +27,8 @@ interface CarouselProps {
 const Carousel: FC<CarouselProps> = ({ items, itemsPerSlide = 3 }) => {
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'center' });
     const [selectedIndex, setSelectedIndex] = useState(0);
-    
+    // const mobile = useIsMobile();
+
     const groupedSlides = useMemo(() => {
         return createGroup(items, itemsPerSlide);
     }, [items, itemsPerSlide]);

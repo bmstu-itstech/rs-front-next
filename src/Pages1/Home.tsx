@@ -11,7 +11,7 @@ const Home: FC = () => {
             <ContactsScreen/>
         </div>
     );
-};
+}
 
 Home.displayName = "HomePage";
 
